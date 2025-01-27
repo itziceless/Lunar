@@ -8263,3 +8263,45 @@ run(function()
 	})
 end)
 	
+run(function()
+	local entityLibrary = shared.vapeentity
+    local Headless = {Enabled = false};
+    Headless = vape.Categories.Utility:CreateModule({
+		PerformanceModeBlacklisted = true,
+        Name = 'Headless',
+        Tooltip = 'Makes your head transparent.',
+        Function = function(callback)
+            if callback then
+				local old, y = nil, nil;
+				local x = old;
+                task.spawn(function()
+                    repeat task.wait()
+						entityLibrary.character.Head.Transparency = 1
+						y = entityLibrary.character.Head:FindFirstChild('face');
+						if y then
+							old = y;
+							y.Parent = game.Workspace;
+						end;
+						for _, v in next, entityLibrary.character:GetChildren() do
+							if v:IsA'Accessory' then
+								v.Handle.Transparency = 0
+							end
+						end
+                    until not Headless.Enabled;
+                end);
+            else
+                entityLibrary.character.Head.Transparency = 0;
+				for _, v in next, entityLibrary.character:GetChildren() do
+					if v:IsA'Accessory' then
+						v.Handle.Transparency = 0;
+					end;
+				end;
+				if old then
+					old.Parent = entityLibrary.character.Head;
+					old = x;
+				end;
+            end;
+        end,
+        Default = false
+    })
+end)
