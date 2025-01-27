@@ -12,7 +12,7 @@ local vape
 local loadstring = function(...)
 	local res, err = loadstring(...)
 	if err and vape then
-		vape:CreateNotification('Vape', 'Failed to load : '..err, 30, 'alert')
+		vape:CreateNotification('Lunar', 'Failed to load : '..err, 30, 'alert')
 	end
 	return res
 end
