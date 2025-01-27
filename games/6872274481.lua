@@ -2439,42 +2439,7 @@ run(function()
 		Min = 1,
 		Max = 360,
 		Default = 360
-	})
-RangeCircle = Killaura:CreateToggle({
-		Name = "Range Visualiser",
-		Function = function(call)
-			if call then
-				local suc, err = pcall(function()
-						RangeCirclePart = Instance.new("MeshPart")
-						RangeCirclePart.MeshId = "rbxassetid://3726303797"
-						RangeCirclePart.CanCollide = false
-						RangeCirclePart.Anchored = true
-						RangeCirclePart.Material = Enum.Material.Neon
-						RangeCirclePart.Size = Vector3.new(Range.Value * 0.7, 0.01, Range.Value * 0.7)
-						if Killaura.Enabled then
-							RangeCirclePart.Parent = gameCamera
-						end
-						--bedwars.QueryUtil:setQueryIgnored(RangeCirclePart, true)
-					end
-				end)
-				if (not suc) then
-					pcall(function()
-						if RangeCirclePart then
-							RangeCirclePart:Destroy()
-							RangeCirclePart = nil
-						end
-						InfoNotification("Killaura - Range Visualiser Circle", "There was an error creating the circle, you're probably on a bad executor.", 2)
-					end)
-				end
-			else
-				if RangeCirclePart then
-					RangeCirclePart:Destroy()
-					RangeCirclePart = nil
-				end
-			end
-		end
-	})
-																							
+	})																					
 	UpdateRate = Killaura:CreateSlider({
 		Name = 'Update rate',
 		Min = 1,
