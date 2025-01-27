@@ -2639,7 +2639,135 @@ run(function()
 		Tooltip = 'Plays animation with hit attempt'
 	})
 end)
+
+run(function()
+	local TweenService = game:GetService("TweenService")
+	local playersService = game:GetService("Players")
+	local lplr = playersService.LocalPlayer
 	
+	local tppos2
+	local deathtpmod = {["Enabled"] = false}
+	local TweenSpeed = 0.7
+	local HeightOffset = 5
+
+	local function teleportWithTween(char, destination)
+		local root = char:FindFirstChild("HumanoidRootPart")
+		if root then
+			destination = destination + Vector3.new(0, HeightOffset, 0)
+			local currentPosition = root.Position
+			if (destination - currentPosition).Magnitude > 0.5 then
+				local tweenInfo = TweenInfo.new(TweenSpeed, Enum.EasingStyle.Linear, Enum.EasingDirection.Out)
+				local goal = {CFrame = CFrame.new(destination)}
+				local tween = TweenService:Create(root, tweenInfo, goal)
+				tween:Play()
+				tween.Completed:Wait()
+			end
+		end
+	end
+
+	local function killPlayer(player)
+		local character = player.Character
+		if character then
+			local humanoid = character:FindFirstChildOfClass("Humanoid")
+			if humanoid then
+				humanoid.Health = 0
+			end
+		end
+	end
+
+	local function onCharacterAdded(char)
+		if tppos2 then 
+			task.spawn(function()
+				local root = char:WaitForChild("HumanoidRootPart", 9000000000)
+				if root and tppos2 then 
+					teleportWithTween(char, tppos2)
+					tppos2 = nil
+				end
+			end)
+		end
+	end
+
+	vapeConnections[#vapeConnections + 1] = lplr.CharacterAdded:Connect(onCharacterAdded)
+
+	local function setTeleportPosition()
+		local UserInputService = game:GetService("UserInputService")
+		local isMobile = UserInputService.TouchEnabled and not UserInputService.KeyboardEnabled
+
+		if isMobile then
+			warningNotification("DeathTP", "Please tap on the screen to set TP position.", 3)
+			local connection
+			connection = UserInputService.TouchTapInWorld:Connect(function(inputPosition, processedByUI)
+				if not processedByUI then
+					local mousepos = lplr:GetMouse().UnitRay
+					local rayparams = RaycastParams.new()
+					rayparams.FilterDescendantsInstances = {game.Workspace.Map, game.Workspace:FindFirstChild("SpectatorPlatform")}
+					rayparams.FilterType = Enum.RaycastFilterType.Whitelist
+					local ray = game.Workspace:Raycast(mousepos.Origin, mousepos.Direction * 10000, rayparams)
+					if ray then 
+						tppos2 = ray.Position 
+						warningNotification("DeathTP", "Set TP Position. Resetting to teleport...", 3)
+						killPlayer(lplr)
+					end
+					connection:Disconnect()
+					deathtpmod["ToggleButton"](false)
+				end
+			end)
+		else
+			local mousepos = lplr:GetMouse().UnitRay
+			local rayparams = RaycastParams.new()
+			rayparams.FilterDescendantsInstances = {game.Workspace.Map, game.Workspace:FindFirstChild("SpectatorPlatform")}
+			rayparams.FilterType = Enum.RaycastFilterType.Whitelist
+			local ray = game.Workspace:Raycast(mousepos.Origin, mousepos.Direction * 10000, rayparams)
+			if ray then 
+				tppos2 = ray.Position 
+				warningNotification("DeathTP", "Set TP Position. Resetting to teleport...", 3)
+				killPlayer(lplr)
+			end
+			deathtpmod["ToggleButton"](false)
+		end
+	end
+
+	deathtpmod = vape.Categories.Blatant:CreateModule({
+		["Name"] = "DeathTP",
+		["Function"] = function(calling)
+			if calling then
+				task.spawn(function()
+					repeat task.wait() until vape.Modules.Invisibility
+					repeat task.wait() until vape.Modules.GamingChair
+					if vape.Modules.Invisibility.Enabled and vape.Modules.GamingChair.Enabled then
+						errorNotification("DeathTP", "Please turn off the Invisibility and GamingChair module!", 3)
+						deathtpmod:Toggle()
+						return
+					end
+					if vape.Modules.Invisibility.Enabled then
+						errorNotification("DeathTP", "Please turn off the Invisibility module!", 3)
+						deathtpmod:Toggle()
+						return
+					end
+					if vape.Modules.GamingChair.Enabled then
+						errorNotification("DeathTP", "Please turn off the GamingChair module!", 3)
+						deathtpmod:Toggle()
+						return
+					end
+					local canRespawn = function() end
+					canRespawn = function()
+						local success, response = pcall(function() 
+							return lplr.leaderstats.Bed.Value == '✅' 
+						end)
+						return success and response 
+					end
+					if not canRespawn() then 
+						warningNotification("DeathTP", "Unable to use DeathTP without bed, Retard.", 5)
+						deathtpmod:Toggle()
+					else
+						setTeleportPosition()
+					end
+				end)
+			end
+		end
+	})
+end)
+																													
 run(function()
 	local Value
 	local start
