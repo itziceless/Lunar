@@ -2445,17 +2445,8 @@ RangeCircle = Killaura:CreateToggle({
 		Function = function(call)
 			if call then
 				local suc, err = pcall(function()
-					if (not shared.CheatEngineMode) then
 						RangeCirclePart = Instance.new("MeshPart")
 						RangeCirclePart.MeshId = "rbxassetid://3726303797"
-						if shared.RiseMode and GuiLibrary.GUICoreColor and GuiLibrary.GUICoreColorChanged then
-							RangeCirclePart.Color = GuiLibrary.GUICoreColor
-							GuiLibrary.GUICoreColorChanged.Event:Connect(function()
-								RangeCirclePart.Color = GuiLibrary.GUICoreColor
-							end)
-						else
-							RangeCirclePart.Color = Color3.fromHSV(BoxColor["Hue"], BoxColor["Sat"], BoxColor.Value)
-						end
 						RangeCirclePart.CanCollide = false
 						RangeCirclePart.Anchored = true
 						RangeCirclePart.Material = Enum.Material.Neon
@@ -2969,7 +2960,6 @@ run(function()
 								end
 							end
 						end)
-					until (not GodMode.Enabled)
 				end)
 			end
 		end
