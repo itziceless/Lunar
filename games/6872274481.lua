@@ -2859,7 +2859,86 @@ run(function()
 		end
 	})
 end)
-	
+
+run(function()
+	function IsAlive(plr)
+		plr = plr or lplr
+		if not plr.Character then return false end
+		if not plr.Character:FindFirstChild("Head") then return false end
+		if not plr.Character:FindFirstChild("Humanoid") then return false end
+		if plr.Character:FindFirstChild("Humanoid").Health < 0.11 then return false end
+		return true
+	end
+	local GodMode = {Enabled = false}
+	local Slowmode = {Value = 2}
+	GodMode = vape.Categories.Blatant:CreateModule({
+		Name = "AntiHit",
+		Function = function(callback)
+			if callback then
+				task.spawn(function()
+					repeat task.wait()
+						pcall(function()
+							if (not vape.Modules.Fly.Enabled) and (not vape.Modules.InfiniteFly.Enabled) then
+								for i, v in pairs(game:GetService("Players"):GetChildren()) do
+									if v.Team ~= lplr.Team and IsAlive(v) and IsAlive(lplr) then
+										if v and v ~= lplr then
+											local TargetDistance = lplr:DistanceFromCharacter(v.Character:FindFirstChild("HumanoidRootPart").CFrame.p)
+											if TargetDistance < 25 then
+												if not lplr.Character:WaitForChild("HumanoidRootPart"):FindFirstChildOfClass("BodyVelocity") then
+													repeat task.wait() until shared.GlobalStore.matchState ~= 0
+													if not (v.Character.HumanoidRootPart.Velocity.Y < -10*5) then
+														lplr.Character.Archivable = true
+				
+														local Clone = lplr.Character:Clone()
+														Clone.Parent = game.Workspace
+														Clone.Head:ClearAllChildren()
+														gameCamera.CameraSubject = Clone:FindFirstChild("Humanoid")
+					
+														for i,v in pairs(Clone:GetChildren()) do
+															if string.lower(v.ClassName):find("part") and v.Name ~= "HumanoidRootPart" then
+																v.Transparency = 1
+															end
+															if v:IsA("Accessory") then
+																v:FindFirstChild("Handle").Transparency = 1
+															end
+														end
+					
+														lplr.Character:WaitForChild("HumanoidRootPart").CFrame = lplr.Character:WaitForChild("HumanoidRootPart").CFrame + Vector3.new(0,100000,0)
+					
+														GodMode:Clean(game:GetService("RunService").RenderStepped:Connect(function()
+															if Clone ~= nil and Clone:FindFirstChild("HumanoidRootPart") then
+																Clone.HumanoidRootPart.Position = Vector3.new(lplr.Character:WaitForChild("HumanoidRootPart").Position.X, Clone.HumanoidRootPart.Position.Y, lplr.Character:WaitForChild("HumanoidRootPart").Position.Z)
+															end
+														end))
+					
+														task.wait(Slowmode.Value/10)
+														lplr.Character:WaitForChild("HumanoidRootPart").Velocity = Vector3.new(lplr.Character:WaitForChild("HumanoidRootPart").Velocity.X, -1, lplr.Character:WaitForChild("HumanoidRootPart").Velocity.Z)
+														lplr.Character:WaitForChild("HumanoidRootPart").CFrame = Clone.HumanoidRootPart.CFrame
+														gameCamera.CameraSubject = lplr.Character:FindFirstChild("Humanoid")
+														Clone:Destroy()
+														task.wait(0.15)
+													end
+												end
+											end
+										end
+									end
+								end
+							end
+						end)
+					until (not GodMode.Enabled)
+				end)
+			end
+		end
+	})
+	Slowmode = GodMode:CreateSlider({
+		Name = "Slowmode",
+		Function = function() end,
+		Default = 2,
+		Min = 1,
+		Max = 10
+	})
+end)
+																														
 run(function()
 	vape.Categories.Blatant:CreateModule({
 		Name = 'NoFall',
@@ -4052,6 +4131,69 @@ run(function()
 				bedwars.CatController.leap = old
 			end)
 		end,
+
+	alchemist = function()
+			table.insert(AutoKit.Connections, game:GetService("Players").LocalPlayer.Chatted:Connect(function(msg)
+					local parts = string.split(msg, " ")
+					if parts[1] and (parts[1] == "/recipes" or parts[1] == "/potions") then
+						local potions = bedwars.ItemTable["brewing_cauldron"].crafting.recipes
+						local function resolvePotionsData(data)
+							local finalData = {}
+							for i,v in pairs(data) do
+								local result = v.result
+								local brewingTime = v.timeToCraft
+								local recipe = ""
+								for i2, v2 in pairs(v.ingredients) do
+									recipe = recipe ~= "" and recipe.." + "..tostring(v2) or recipe == "" and recipe..tostring(v2)
+								end
+								table.insert(finalData, {
+									Result = result, 
+									BrewingTime = brewingTime,
+									Recipe = recipe
+								})
+							end
+							return finalData
+						end
+						for i,v in pairs(resolvePotionsData(potions)) do
+							local text = v.Result..": "..v.Recipe.." ("..tostring(v.BrewingTime).."seconds)"
+							game:GetService("StarterGui"):SetCore("ChatMakeSystemMessage", {
+								Text = text,
+								Color = Color3.new(255, 255, 255),
+								Font = Enum.Font.SourceSans,
+								FontSize = Enum.FontSize.Size36
+							})
+						end
+					end
+				end
+			end))
+			local function fetchItem(obj)
+				local args = {
+					[1] = {
+						["id"] = obj:GetAttribute("Id"),
+						["collectableName"] = obj.Name
+					}
+				}
+				local res = game:GetService("ReplicatedStorage"):WaitForChild("rbxts_include"):WaitForChild("node_modules"):WaitForChild("@rbxts"):WaitForChild("net"):WaitForChild("out"):WaitForChild("_NetManaged"):WaitForChild("CollectCollectableEntity"):FireServer(unpack(args))
+			end
+			local allowedNames = {"Thorns", "Mushrooms", "Flower"}
+			task.spawn(function()
+				repeat
+					task.wait()
+					if entityLibrary.isAlive then 
+						local maxDistance = 30
+						for i,v in pairs(game.Workspace:GetChildren()) do
+							if v.Parent and v.ClassName == "Model" and table.find(allowedNames, v.Name) and game:GetService("Players").LocalPlayer.Character and game:GetService("Players").LocalPlayer.Character:FindFirstChild("HumanoidRootPart") then
+								local pos1 = game:GetService("Players").LocalPlayer.Character:FindFirstChild("HumanoidRootPart").Position
+								local pos2 = v.PrimaryPart.Position
+								if (pos1 - pos2).Magnitude <= maxDistance then
+									fetchItem(v)
+								end
+							end
+						end
+					end
+			end)
+		end,
+																																																														
 		davey = function()
 			local old = bedwars.CannonHandController.launchSelf
 			bedwars.CannonHandController.launchSelf = function(...)
