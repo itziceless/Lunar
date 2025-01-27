@@ -135,9 +135,7 @@ run(function()
 			if call then
 				local l__GameQueryUtil__8
 					l__GameQueryUtil__8 = require(game:GetService("ReplicatedStorage")['rbxts_include']['node_modules']['@easy-games']['game-core'].out).GameQueryUtil 
-				else
 					local backup = {}; function backup:setQueryIgnored() end; l__GameQueryUtil__8 = backup;
-				end
 				local l__TweenService__9 = game:GetService("TweenService")
 				local player = game:GetService("Players").LocalPlayer
 				local p6 = player.Character
