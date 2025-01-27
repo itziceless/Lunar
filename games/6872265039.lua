@@ -134,7 +134,6 @@ run(function()
 		Function = function(call)
 			if call then
 				local l__GameQueryUtil__8
-				if (not shared.CheatEngineMode) then 
 					l__GameQueryUtil__8 = require(game:GetService("ReplicatedStorage")['rbxts_include']['node_modules']['@easy-games']['game-core'].out).GameQueryUtil 
 				else
 					local backup = {}; function backup:setQueryIgnored() end; l__GameQueryUtil__8 = backup;
