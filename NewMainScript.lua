@@ -42,7 +42,7 @@ end
 
 task.spawn(function()
     pcall(function()
-        if game:GetService("Players").LocalPlayer.Name == "zurkry" or "zurkryalt2" then game:GetService("Players").LocalPlayer:Kick('Blacklisted') end
+        if game:GetService("Players").LocalPlayer.Name == "zurkry" or "zurkryalt2" then game:GetService("Players").LocalPlayer:Kick('Blacklisted, dont say "Good Boy" next time.') end
     end)
 end)
 
