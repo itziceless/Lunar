@@ -2924,9 +2924,10 @@ run(function()
 									end
 								end
 							end
-						end)
+						})																																			
+					end)
 																																								
-	})
+
 	Slowmode = GodMode:CreateSlider({
 		Name = "Slowmode",
 		Function = function() end,
