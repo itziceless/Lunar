@@ -1367,7 +1367,18 @@ run(function()
 		Tooltip = 'Remove the CPS cap'
 	})
 end)
-	
+
+run(function()
+	vape.Categories.Combat:CreateModule({
+		Name = 'HitFix',
+		Function = function(callback)
+			debug.setconstant(bedwars.SwordController.swingSwordAtMouse, 23, callback and 'raycast' or 'Raycast')
+			debug.setupvalue(bedwars.SwordController.swingSwordAtMouse, 4, callback and bedwars.QueryUtil or workspace)
+		end,
+		Tooltip = 'Changes the raycast function to the correct one'
+	})
+end)
+				
 run(function()
 	local Value
 	
@@ -7495,17 +7506,6 @@ run(function()
 	Color = HitColor:CreateColorSlider({
 		Name = 'Color',
 		DefaultOpacity = 0.4
-	})
-end)
-	
-run(function()
-	vape.Legit:CreateModule({
-		Name = 'HitFix',
-		Function = function(callback)
-			debug.setconstant(bedwars.SwordController.swingSwordAtMouse, 23, callback and 'raycast' or 'Raycast')
-			debug.setupvalue(bedwars.SwordController.swingSwordAtMouse, 4, callback and bedwars.QueryUtil or workspace)
-		end,
-		Tooltip = 'Changes the raycast function to the correct one'
 	})
 end)
 	
