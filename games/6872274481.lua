@@ -7219,6 +7219,7 @@ run(function()
 		Function = function(callback)
 			if callback then
 				print("testing...")
+				notif('Lunar', 'Testing...', 2, 'warning')
 				end
 			end,
 		Tooltip = 'Something cool here soon :D'
