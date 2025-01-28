@@ -2859,15 +2859,6 @@ run(function()
 		end
 	})
 end)																																			
-
-	Slowmode = GodMode:CreateSlider({
-		Name = "Slowmode",
-		Function = function() end,
-		Default = 2,
-		Min = 1,
-		Max = 10
-	})
-end)
 																														
 run(function()
 	vape.Categories.Blatant:CreateModule({
