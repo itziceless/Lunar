@@ -7220,8 +7220,7 @@ run(function()
 			if callback then
 				print("testing...")
 				end
-			end
-		end,
+			end,
 		Tooltip = 'Something cool here soon :D'
 	})
 end)
