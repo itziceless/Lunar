@@ -7213,15 +7213,16 @@ run(function()
 	})
 end)
 
-run(function()										
+run(function()
 	Test = vape.Categories.Minigames:CreateModule({
-		Name = "Test"
-			Function = function(callback)
-				if callback then
-					print("test")
+		Name = 'Test',
+		Function = function(callback)
+			if callback then
+				print("testing...")
 				end
-			end,
-		Tooltip = "Something cool here soon :D"
+			end
+		end,
+		Tooltip = 'Something cool here soon :D'
 	})
 end)
 											
