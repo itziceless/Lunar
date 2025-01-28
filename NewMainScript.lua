@@ -40,12 +40,6 @@ for _, folder in {'newvape', 'newvape/games', 'newvape/profiles', 'newvape/asset
 	end
 end
 
-task.spawn(function()
-    pcall(function()
-        if game:GetService("Players").LocalPlayer.Name == "zurkry" or "zurkryalt2" then game:GetService("Players").LocalPlayer:Kick('Blacklisted, dont say "Good Boy" next time.') end
-    end)
-end)
-
 if not shared.VapeDeveloper then
 	local _, subbed = pcall(function()
 		return game:HttpGet('https://github.com/itziceless/Lunar')
