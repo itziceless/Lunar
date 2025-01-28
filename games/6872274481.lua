@@ -7212,6 +7212,19 @@ run(function()
 		Tooltip = 'Only breaks when tools are held'
 	})
 end)
+
+run(function()										
+	Test = vape.Categories.Minigames:CreateModule({
+		Name = "Test"
+			Function = function(callback)
+				if callback then
+					print("test")
+				end
+			end,
+		Tooltip = "Something cool here soon :D"
+	})
+end)
+											
 	
 run(function()
 	vape.Legit:CreateModule({
