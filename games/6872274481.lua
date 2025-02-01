@@ -8410,3 +8410,7 @@ run(function()
 		end
 	})
 end)
+
+if isnetworkowner then
+	vape:CreateNotification('Lunar', 'Your currently using a low-tier executor, Some features might not work as its intented.', 30, 'alert')
+end
