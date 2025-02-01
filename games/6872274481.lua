@@ -8412,3 +8412,7 @@ run(function()
 		end
 	})
 end)
+
+if horridexec then
+	vape:CreateNotification('Lunar', 'Your currently using a low UNC Executor, Some features might not work correct.', 30, 'alert')
+end
