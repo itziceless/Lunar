@@ -4148,6 +4148,11 @@ run(function()
 				end
 			end, 120, false)
 		end,
+		terra = function()
+			local args = {"BLOCK_STOMP"}
+		game:GetService("ReplicatedStorage"):WaitForChild("events-@easy-games/game-core:shared/game-core-networking@getEvents.Events"):WaitForChild("useAbility"):FireServer(unpack(args))
+			end, 1, true
+		end,
 		melody = function()
 			repeat
 				local mag, hp, ent = 30, math.huge
@@ -4185,10 +4190,6 @@ run(function()
 					petrifyId = v:GetAttribute('PetrifyId')
 				})
 			end, 6, true)
-		end,
-		terra = function()
-			bedwars.Client:Get(remotes.BlockStomp):SendToServer({
-			end, 2, true)
 		end,
 		pinata = function()
 			kitCollection(lplr.Name..':pinata', function(v)
