@@ -4186,6 +4186,10 @@ run(function()
 				})
 			end, 6, true)
 		end,
+		terra = function()
+			bedwars.Client:Get(remotes.BlockStomp):SendToServer({
+			end, 2, true)
+		end,
 		pinata = function()
 			kitCollection(lplr.Name..':pinata', function(v)
 				if getItem('candy') then
