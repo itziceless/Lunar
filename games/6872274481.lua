@@ -11,7 +11,7 @@ local vapeEvents = setmetatable({}, {
 	end
 })
 
-local horridexec =  identifyexecutor and table.find({'AWP', 'Wave'}, ({identifyexecutor()})[1])
+local horridexec =  identifyexecutor and table.find({'Solara', 'Xeno', 'Sirhurt'}, ({identifyexecutor()})[1])
 
 local playersService = cloneref(game:GetService('Players'))
 local replicatedStorage = cloneref(game:GetService('ReplicatedStorage'))
