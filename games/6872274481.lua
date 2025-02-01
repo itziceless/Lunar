@@ -4148,11 +4148,6 @@ run(function()
 				end
 			end, 120, false)
 		end,
-		terra = function()
-			local args = {"BLOCK_STOMP"}
-		game:GetService("ReplicatedStorage"):WaitForChild("events-@easy-games/game-core:shared/game-core-networking@getEvents.Events"):WaitForChild("useAbility"):FireServer(unpack(args))
-			end, 1, true
-		end,
 		melody = function()
 			repeat
 				local mag, hp, ent = 30, math.huge
