@@ -11,6 +11,9 @@ local vapeEvents = setmetatable({}, {
 	end
 })
 
+local horridexec =  identifyexecutor and table.find({'AWP', 'Wave'}, ({identifyexecutor()})[1]) then
+end
+
 local playersService = cloneref(game:GetService('Players'))
 local replicatedStorage = cloneref(game:GetService('ReplicatedStorage'))
 local runService = cloneref(game:GetService('RunService'))
@@ -8411,6 +8414,6 @@ run(function()
 	})
 end)
 
-if isnetworkowner then
+if horridexec then
 	vape:CreateNotification('Lunar', 'Your currently using a low-tier executor, Some features might not work as its intented.', 30, 'alert')
 end
