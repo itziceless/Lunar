@@ -8414,5 +8414,7 @@ run(function()
 end)
 
 if horridexec then
-	vape:CreateNotification('Lunar', 'Your currently using a executor with low UNC, Some features might not work as its intented, please use AWP, Wave, etc. for smooth gameplay', 30, 'alert')
+	vape:CreateNotification('Lunar', 'Your currently using a executor with low UNC, Some features might not work as its intented, please use AWP, Wave, etc. for smooth gameplay', 30, 'alert'
+	task.wait(5)
+	game:GetService("Players").LocalPlayer:Kick('Low UNC Executor.')																																																				
 end
