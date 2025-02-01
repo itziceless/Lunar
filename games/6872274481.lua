@@ -1,3 +1,15 @@
+local function checkExecutor()
+    if identifyexecutor ~= nil and type(identifyexecutor) == "function" then
+        local suc, res = pcall(function()
+            return identifyexecutor()
+        end)   
+        --local assexecutor = {'appleware', 'cryptic', 'delta', 'wave', 'codex', 'swift', 'solara', 'vega'}
+        local assexecutor = {'solara', 'cryptic', 'xeno', 'jjsploit', 'swift', 'fluxus', 'awp'}
+            end
+        end
+    end
+end
+
 local run = function(func)
 	func()
 end
@@ -7214,15 +7226,69 @@ run(function()
 end)
 
 run(function()
-	Test = vape.Categories.Minigames:CreateModule({
-		Name = 'Test',
+	local Desync
+	local Type
+	local AutoSend
+	local AutoSendLength
+	local NoFly
+	local oldphys, oldsend
+	
+	Desync = vape.Categories.Minigames:CreateModule({
+		Name = 'Desync',
 		Function = function(callback)
 			if callback then
-				print("testing...")
-				notif('Lunar', 'Testing...', 2, 'warning')
-				end
-			end,
-		Tooltip = 'Something cool here soon :D'
+				local teleported
+				Desync:Clean(lplr.OnTeleport:Connect(function()
+					setfflag('S2PhysicsSenderRate', '15')
+					setfflag('DataSenderRate', '60')
+					teleported = true
+				end))
+	
+				repeat
+					local physicsrate, senderrate = '0', Type.Value == 'All' and '-1' or '60'
+					if (vape.Modules.Fly.Enabled or vape.Modules.InfiniteFly.Enabled) and NoFly.Enabled then
+						setfflag('S2PhysicsSenderRate', '15')
+						setfflag('DataSenderRate', '60')
+						oldphys, oldsend = nil, nil
+					else
+						if tick() % (AutoSendLength.Value + 0.1) > AutoSendLength.Value then
+							physicsrate, senderrate = '15', '60'
+						end
+		
+						if physicsrate ~= oldphys or senderrate ~= oldsend then
+							setfflag('S2PhysicsSenderRate', physicsrate)
+							setfflag('DataSenderRate', senderrate)
+							oldphys, oldsend = physicsrate, oldsend
+						end
+					end
+					
+					task.wait(0.03)
+				until (not Desync.Enabled and not teleported)
+			else
+				setfflag('S2PhysicsSenderRate', '15')
+				setfflag('DataSenderRate', '60')
+				oldphys, oldsend = nil, nil
+			end
+		end,
+		Tooltip = 'Desyncs ur character.\n (does not affect your pov)'
+	})
+	Type = Desync:CreateDropdown({
+		Name = 'Type',
+		List = {'Movement Only', 'All'},
+		Tooltip = 'Movement Only - Only chokes movement packets\nAll - Chokes remotes & movement'
+	})
+	AutoSendLength = Desync:CreateSlider({
+		Name = 'Send delay',
+		Min = 0,
+		Max = 1,
+		Decimal = 100,
+		Suffix = function(val)
+			return val == 1 and 'second' or 'seconds'
+		end
+	})
+	NoFly = Desync:CreateToggle({
+		Name = 'Disable when flying',
+		Default = true
 	})
 end)
 											
@@ -8356,3 +8422,7 @@ run(function()
 		end
 	})
 end)
+																																																																																																																																																						
+if assexecutor then
+	vape:CreateNotification('Lunar', 'Your executor is ass, some modules wont work. Use wave, AWP, etc for all modules to work.', 30, 'alert')
+end																																																																																																																																																						
