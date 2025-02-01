@@ -1,15 +1,3 @@
-local function checkExecutor()
-    if identifyexecutor ~= nil and type(identifyexecutor) == "function" then
-        local suc, res = pcall(function()
-            return identifyexecutor()
-        end)   
-        --local assexecutor = {'appleware', 'cryptic', 'delta', 'wave', 'codex', 'swift', 'solara', 'vega'}
-        local assexecutor = {'solara', 'cryptic', 'xeno', 'jjsploit', 'swift', 'fluxus', 'awp'}
-            end
-        end
-    end
-end
-
 local run = function(func)
 	func()
 end
@@ -8422,7 +8410,3 @@ run(function()
 		end
 	})
 end)
-																																																																																																																																																						
-if assexecutor then
-	vape:CreateNotification('Lunar', 'Your executor is ass, some modules wont work. Use wave, AWP, etc for all modules to work.', 30, 'alert')
-end																																																																																																																																																						
