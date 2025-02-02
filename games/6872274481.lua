@@ -5667,7 +5667,8 @@ GraySky = vape.Categories.World:CreateModule({
 		end,
 	Tooltip = 'For my AWP users.'
 	})
-end
+end)
+
 run(function()
 	local ArmorSwitch
 	local Mode
