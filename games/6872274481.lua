@@ -8428,8 +8428,7 @@ end)
 if horridexec then
 	vape:CreateNotification('Lunar', 'Your currently using a low UNC Executor, Some features might not work correct.', 30, 'alert')
 end
-
-if player.name == "yoiceless" then																									
+																								
 run(function()
 	local AntiHit = {Enabled = false}
 	local hrptransparency = {Enabled = false}
@@ -8478,7 +8477,7 @@ run(function()
 	local lastSkyTick = tick();
 	local lastGroundTick = tick();
 
-	AntiHit = vape.Categories.Blatant:CreateModule({
+	AntiHit = vape.Legit:CreateModule({
 		Name = 'AntiHit',
 		Tooltip = 'Prevents people from being able to hit you',
 		Function = function(callback: boolean)
