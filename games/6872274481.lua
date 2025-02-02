@@ -5663,7 +5663,7 @@ GraySky = vape.Categories.World:CreateModule({
 		Function = function(callback)
 			if callback then
 				setfflag('DebugSkyGray', 'true')
-			end)
+			end
 		end,
 	Tooltip = 'For my AWP users.'
 	})
