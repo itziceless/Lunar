@@ -8477,7 +8477,7 @@ run(function()
 	local lastSkyTick = tick();
 	local lastGroundTick = tick();
 
-	AntiHit = vape.Legit:CreateModule({
+	AntiHit = vape.Categories.Blatant:CreateModule({
 		Name = 'AntiHit',
 		Tooltip = 'Prevents people from being able to hit you',
 		Function = function(callback: boolean)
