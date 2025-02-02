@@ -8339,7 +8339,7 @@ run(function()
 	local asset
 	local lastPosition
     local NightmareEmote
-	NightmareEmote = vape.Categories.World:CreateModule({
+	NightmareEmote = vape.Categories.World:CreateModule({ -- credits to ercodev
 		Name = "NightmareEmote",
 		Function = function(call)
 			if call then
