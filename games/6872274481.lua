@@ -7260,7 +7260,7 @@ run(function()
 				oldphys, oldsend = nil, nil
 			end
 		end,
-		Tooltip = 'Desyncs ur character.\n (does not affect your pov)'
+		Tooltip = 'Desyncs ur character.\n (basically looks like your really laggy)'
 	})
 	Type = Desync:CreateDropdown({
 		Name = 'Type',
