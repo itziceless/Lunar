@@ -5739,7 +5739,7 @@ mainapi:CreateCategory({
 	Size = UDim2.fromOffset(14, 14)
 })
 mainapi:CreateCategory({
-	Name = 'Fast Flags',
+	Name = 'FFlags',
 	Icon = getcustomasset('newvape/assets/new/miniicon.png'),
 	Size = UDim2.fromOffset(19, 12)
 })
@@ -6040,10 +6040,11 @@ guipane:CreateButton({
 			RenderCategory = 4,
 			UtilityCategory = 5,
 			WorldCategory = 6,
-			InventoryCategory = 7,
-			MinigamesCategory = 8,
-			FriendsCategory = 9,
-			ProfilesCategory = 10
+			FFlagsCategory= 7,
+			InventoryCategory = 8,
+			MinigamesCategory = 9,
+			FriendsCategory = 10,
+			ProfilesCategory = 11
 		}
 		local categories = {}
 		for _, v in mainapi.Categories do
