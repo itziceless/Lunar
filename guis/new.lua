@@ -5739,6 +5739,11 @@ mainapi:CreateCategory({
 	Size = UDim2.fromOffset(14, 14)
 })
 mainapi:CreateCategory({
+	Name = 'Fast Flags',
+	Icon = getcustomasset('newvape/assets/new/miniicon.png'),
+	Size = UDim2.fromOffset(19, 12)
+})
+mainapi:CreateCategory({
 	Name = 'Inventory',
 	Icon = getcustomasset('newvape/assets/new/inventoryicon.png'),
 	Size = UDim2.fromOffset(15, 14)
