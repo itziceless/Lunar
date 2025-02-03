@@ -2675,7 +2675,6 @@ mainapi:CreateCategory({
 })
 mainapi:CreateCategory({
 	Name = 'FFlags',
-	RealName = 'FFlags',
 	RiseIcon = 'f'
 })
 mainapi:CreateCategory({
@@ -2685,7 +2684,6 @@ mainapi:CreateCategory({
 })
 mainapi:CreateCategory({
 	Name = 'Settings',
-	RealName = 'Settings',
 	RiseIcon = 'g'
 })
 mainapi.Categories.Minigames = mainapi.Categories.Utility
