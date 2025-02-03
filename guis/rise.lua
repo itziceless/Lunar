@@ -2675,7 +2675,7 @@ mainapi:CreateCategory({
 })
 mainapi:CreateCategory({
 	Name = 'FFlags',
-	RiseIcon = 'f'
+	RiseIcon = getcustomasset('newvape/assets/new/flag.png') -- im too lazy to understand how he made the icons work :skull:
 })
 mainapi:CreateCategory({
 	Name = 'Ghost',
@@ -2684,7 +2684,7 @@ mainapi:CreateCategory({
 })
 mainapi:CreateCategory({
 	Name = 'Settings',
-	RiseIcon = 'g'
+	RiseIcon = getcustomasset('newvape/assets/new/settingsicon.png') -- im too lazy to understand how he made the icons work :skull:
 })
 mainapi.Categories.Minigames = mainapi.Categories.Utility
 mainapi.Categories.Inventory = mainapi.Categories.Utility
