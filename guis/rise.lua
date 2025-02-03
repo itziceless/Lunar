@@ -2667,11 +2667,16 @@ mainapi:CreateCategory({
 mainapi:CreateCategory({
 	Name = 'Render',
 	RiseIcon = 'g'
-})
+})								
 mainapi:CreateCategory({
 	Name = 'Exploit',
 	RealName = 'World',
 	RiseIcon = 'a'
+})
+mainapi:CreateCategory({
+	Name = 'FFlag',
+	RealName = 'FFlag',
+	RiseIcon = 'f'
 })
 mainapi:CreateCategory({
 	Name = 'Ghost',
@@ -2966,7 +2971,7 @@ local watermark = Instance.new('TextLabel')
 watermark.Size = UDim2.fromOffset(70, 40)
 watermark.Position = UDim2.fromOffset(12, guiService:GetGuiInset().Y + 5)
 watermark.BackgroundTransparency = 1
-watermark.Text = 'Rise'
+watermark.Text = 'Lunar'
 watermark.TextColor3 = Color3.new(1, 1, 1)
 watermark.TextSize = 43
 watermark.TextXAlignment = Enum.TextXAlignment.Left
