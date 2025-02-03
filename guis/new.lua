@@ -5741,7 +5741,7 @@ mainapi:CreateCategory({
 })
 mainapi:CreateCategory({
 	Name = 'FFlags',
-	Icon = getcustomasset('newvape/assets/new/miniicon.png'),
+	Icon = getcustomasset('newvape/assets/new/flag.png'),
 	Size = UDim2.fromOffset(19, 12)
 })
 mainapi:CreateCategory({
