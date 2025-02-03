@@ -8357,6 +8357,18 @@ Quality = vape.Categories.FFlags:CreateModule({
 	Tooltip = 'Sets your graphics to 1 but keeps render distance.'
 	})
 end)
+
+run(function()
+GrayPeople = vape.Categories.FFlags:CreateModule({
+		Name = 'Gray Avatar',
+		Function = function(callback)
+			if callback then
+				setfflag('DFIntTextureCompositorActiveJobs', '0')
+			end
+		end,
+	Tooltip = 'turns peoples avatars to grey.'
+	})
+end)															
 																																																												
 if horridexec then
 	vape:CreateNotification('Lunar', 'Your currently using a low UNC Executor, Some features might not work correct.', 30, 'alert')
