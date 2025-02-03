@@ -8345,6 +8345,18 @@ GraySky = vape.Categories.FFlags:CreateModule({
 	Tooltip = 'For my AWP users.'
 	})
 end)
+
+run(function()
+Quality = vape.Categories.FFlags:CreateModule({
+		Name = 'Low Quality',
+		Function = function(callback)
+			if callback then
+				setfflag('DFIntDebugFRMQualityLevelOverride', '1')
+			end
+		end,
+	Tooltip = 'Sets your graphics to 1 but keeps render distance.'
+	})
+end)
 																																																												
 if horridexec then
 	vape:CreateNotification('Lunar', 'Your currently using a low UNC Executor, Some features might not work correct.', 30, 'alert')
