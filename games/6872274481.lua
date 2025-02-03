@@ -5658,18 +5658,6 @@ end)
 end)
 
 run(function()
-GraySky = vape.Categories.World:CreateModule({
-		Name = 'GraySky',
-		Function = function(callback)
-			if callback then
-				setfflag('DebugSkyGray', 'true')
-			end
-		end,
-	Tooltip = 'For my AWP users.'
-	})
-end)
-
-run(function()
 	local ArmorSwitch
 	local Mode
 	local Targets
@@ -8345,6 +8333,18 @@ run(function()
 	})
 end)
 
+run(function()
+GraySky = vape.Categories.World:CreateModule({
+		Name = 'GraySky',
+		Function = function(callback)
+			if callback then
+				setfflag('DebugSkyGray', 'true')
+			end
+		end,
+	Tooltip = 'For my AWP users.'
+	})
+end)
+																																																												
 if horridexec then
 	vape:CreateNotification('Lunar', 'Your currently using a low UNC Executor, Some features might not work correct.', 30, 'alert')
 end
