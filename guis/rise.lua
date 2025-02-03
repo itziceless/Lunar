@@ -2674,8 +2674,8 @@ mainapi:CreateCategory({
 	RiseIcon = 'a'
 })
 mainapi:CreateCategory({
-	Name = 'FFlag',
-	RealName = 'FFlag',
+	Name = 'FFlags',
+	RealName = 'FFlags',
 	RiseIcon = 'f'
 })
 mainapi:CreateCategory({
