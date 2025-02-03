@@ -8342,7 +8342,7 @@ GraySky = vape.Categories.FFlags:CreateModule({
 				vape:CreateNotification('Lunar', 'Gray Sky enables next game.', 10, 'info')
 			end
 		end,
-	Tooltip = 'For my AWP users.'
+	Tooltip = 'Turns your sky Gray \n (must rejoin to take effect)'
 	})
 end)
 
@@ -8354,7 +8354,7 @@ Quality = vape.Categories.FFlags:CreateModule({
 				setfflag('DFIntDebugFRMQualityLevelOverride', '1')
 			end
 		end,
-	Tooltip = 'Sets your graphics to 1 but keeps render distance.'
+	Tooltip = 'Sets your graphics to 1 but keeps render distance.\n (must rejoin to take effect)'
 	})
 end)
 
@@ -8366,7 +8366,7 @@ GrayPeople = vape.Categories.FFlags:CreateModule({
 				setfflag('DFIntTextureCompositorActiveJobs', '0')
 			end
 		end,
-	Tooltip = 'turns peoples avatars to grey.'
+	Tooltip = 'turns peoples avatars to grey.\n (must rejoin to take effect)'
 	})
 end)															
 																																																												
