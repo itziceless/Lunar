@@ -8334,11 +8334,12 @@ run(function()
 end)
 
 run(function()
-GraySky = vape.Categories.World:CreateModule({
+GraySky = vape.Categories.FFlags:CreateModule({
 		Name = 'GraySky',
 		Function = function(callback)
 			if callback then
 				setfflag('DebugSkyGray', 'true')
+				vape:CreateNotification('Lunar', 'Gray Sky enables next game.', 10, 'info')
 			end
 		end,
 	Tooltip = 'For my AWP users.'
