@@ -2492,7 +2492,7 @@ run(function()
 							RangeCirclePart.Parent = gameCamera
 						end
 					end																										
-				end
+				end)
 			})																										
 	Killaura:CreateToggle({
 		Name = 'Show target',
