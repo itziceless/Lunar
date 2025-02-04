@@ -2497,20 +2497,7 @@ run(function()
 						end
 						--bedwars.QueryUtil:setQueryIgnored(RangeCirclePart, true)
 					end
-					pcall(function()
-						if RangeCirclePart then
-							RangeCirclePart:Destroy()
-							RangeCirclePart = nil
-						end
-						InfoNotification("Killaura - Range Visualiser", "There was an error Disabling...", 2)
-					end)
-			else
-				if RangeCirclePart then
-					RangeCirclePart:Destroy()
-					RangeCirclePart = nil
-				end
-			end
-		end
+					
 	})																						
 	Killaura:CreateToggle({
 		Name = 'Show target',
