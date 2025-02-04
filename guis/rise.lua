@@ -2349,7 +2349,7 @@ function mainapi:Load(skipgui, profile)
 			if v.Enabled ~= object.Enabled then
 				if skipgui then
 					if self.ToggleNotifications.Enabled then
-						self:CreateNotification('Toggled', 'Toggled '..i..' '..(v.Enabled and 'on' or 'off'), 0.5)
+						self:CreateNotification('Toggled', 'Toggled '..i..' '..(v.Enabled and 'on' or 'off'), 0.2)
 					end
 				end
 				object:Toggle(true)
