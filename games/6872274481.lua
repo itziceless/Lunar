@@ -2492,23 +2492,9 @@ run(function()
 						if Killaura.Enabled then
 							RangeCirclePart.Parent = gameCamera
 						end
-						--bedwars.QueryUtil:setQueryIgnored(RangeCirclePart, true)
 					end
-				end)
-					if RangeCirclePart then
-						RangeCirclePart:Destroy()
-							RangeCirclePart = nil
-						end
-						InfoNotification("Killaura - Range Visualiser Circle", "There was an error creating the circle. Disabling...", 2)
-					end)
-				end
-			else
-				if RangeCirclePart then
-					RangeCirclePart:Destroy()
-					RangeCirclePart = nil
-				end
-			end
-		end
+				})																								
+			end)
 																								
 	Killaura:CreateToggle({
 		Name = 'Show target',
