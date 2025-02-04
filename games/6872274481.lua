@@ -2494,7 +2494,6 @@ run(function()
 						end
 					end
 				})																								
-			end)
 																								
 	Killaura:CreateToggle({
 		Name = 'Show target',
