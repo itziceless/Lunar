@@ -2139,7 +2139,7 @@ function mainapi:CreateOverlay(categorysettings)
 	categoryapi = {
 		Type = 'Overlay',
 		Expanded = false,
-		Button = self.Categories.Render:CreateModule({
+		Button = self.Categories.Settings:CreateModule({
 			Name = categorysettings.Name,
 			Function = function(callback)
 				customchildren.Visible = callback
@@ -2349,7 +2349,7 @@ function mainapi:Load(skipgui, profile)
 			if v.Enabled ~= object.Enabled then
 				if skipgui then
 					if self.ToggleNotifications.Enabled then
-						self:CreateNotification('Toggled', 'Toggled '..i..' '..(v.Enabled and 'on' or 'off'), 1)
+						self:CreateNotification('Toggled', 'Toggled '..i..' '..(v.Enabled and 'on' or 'off'), 0.5)
 					end
 				end
 				object:Toggle(true)
