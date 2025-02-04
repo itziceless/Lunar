@@ -2472,33 +2472,7 @@ run(function()
 	})
 	Mouse = Killaura:CreateToggle({Name = 'Require mouse down'})
 	Swing = Killaura:CreateToggle({Name = 'No Swing'})
-	GUI = Killaura:CreateToggle({Name = 'GUI check'})
-	RangeCircle = Killaura:CreateToggle({
-		Name = "Range Visualiser",
-		Function = function(call)
-			if call then
-				local suc, err = pcall(function()
-						RangeCirclePart = Instance.new("MeshPart")
-						RangeCirclePart.MeshId = "rbxassetid://3726303797"
-						if shared.RiseMode and GuiLibrary.GUICoreColor and GuiLibrary.GUICoreColorChanged then
-							RangeCirclePart.Color = GuiLibrary.GUICoreColor
-							GuiLibrary.GUICoreColorChanged.Event:Connect(function()
-								RangeCirclePart.Color = GuiLibrary.GUICoreColor
-							end)
-						else
-							RangeCirclePart.Color = Color3.fromHSV(BoxColor["Hue"], BoxColor["Sat"], BoxColor.Value)
-						end
-						RangeCirclePart.CanCollide = false
-						RangeCirclePart.Anchored = true
-						RangeCirclePart.Material = Enum.Material.Neon
-						RangeCirclePart.Size = Vector3.new(Range.Value * 0.7, 0.01, Range.Value * 0.7)
-						if Killaura.Enabled then
-							RangeCirclePart.Parent = gameCamera
-						end
-						--bedwars.QueryUtil:setQueryIgnored(RangeCirclePart, true)
-					end
-					
-	})																						
+	GUI = Killaura:CreateToggle({Name = 'GUI check'})																						
 	Killaura:CreateToggle({
 		Name = 'Show target',
 		Function = function(callback)
