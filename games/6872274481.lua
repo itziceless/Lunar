@@ -2484,7 +2484,6 @@ run(function()
 							GuiLibrary.GUICoreColorChanged.Event:Connect(function()
 								RangeCirclePart.Color = GuiLibrary.GUICoreColor
 							RangeCirclePart.Color = Color3.fromHSV(BoxColor["Hue"], BoxColor["Sat"], BoxColor.Value)
-						end)
 						RangeCirclePart.CanCollide = false
 						RangeCirclePart.Anchored = true
 						RangeCirclePart.Material = Enum.Material.Neon
@@ -2492,7 +2491,9 @@ run(function()
 						if Killaura.Enabled then
 							RangeCirclePart.Parent = gameCamera
 						end
-					})																																									
+					end																										
+				end
+			})																										
 	Killaura:CreateToggle({
 		Name = 'Show target',
 		Function = function(callback)
