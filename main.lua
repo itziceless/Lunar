@@ -54,6 +54,14 @@ local function finishLoading()
 		until not vape.Loaded
 	end)
 
+	local badexecutor = false
+	if identifyexecutor then
+	if table.find({'Xeno', 'Solara', 'AWP'}, ({identifyexecutor()})[1]) then
+		badexecutor = true
+		vape:CreateNotification('bad executor detected, some modules are disabled.', 5)
+	end
+end
+
 	local teleportedServers
 	vape:Clean(playersService.LocalPlayer.OnTeleport:Connect(function()
 		if (not teleportedServers) and (not shared.VapeIndependent) then
