@@ -2211,7 +2211,7 @@ function mainapi:CreateNotification(title, text, duration, type, continued)
 		})
 	end
 	if title == 'Finished Loading' then
-		title = 'Rise'
+		title = 'Lunar'
 		text = 'Reconnecting to nothing...'
 		duration = 5
 	end
@@ -2675,7 +2675,7 @@ mainapi:CreateCategory({
 })
 mainapi:CreateCategory({
 	Name = 'FFlags',
-	RiseIcon = getcustomasset('newvape/assets/new/flag.png') -- im too lazy to understand how he made the icons work :skull:
+	RiseIcon = 'r'
 })
 mainapi:CreateCategory({
 	Name = 'Ghost',
@@ -2684,7 +2684,7 @@ mainapi:CreateCategory({
 })
 mainapi:CreateCategory({
 	Name = 'Settings',
-	RiseIcon = getcustomasset('newvape/assets/new/settingsicon.png') -- im too lazy to understand how he made the icons work :skull:
+	RiseIcon = 'p'
 })
 mainapi.Categories.Minigames = mainapi.Categories.Utility
 mainapi.Categories.Inventory = mainapi.Categories.Utility
