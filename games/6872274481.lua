@@ -2472,7 +2472,8 @@ run(function()
 	})
 	Mouse = Killaura:CreateToggle({Name = 'Require mouse down'})
 	Swing = Killaura:CreateToggle({Name = 'No Swing'})
-	GUI = Killaura:CreateToggle({Name = 'GUI check'})																										
+	GUI = Killaura:CreateToggle({Name = 'GUI check'})
+	Visual = Killaura:CreateToggle({Name = 'Range Visual'})																							
 	Killaura:CreateToggle({
 		Name = 'Show target',
 		Function = function(callback)
@@ -2494,13 +2495,6 @@ run(function()
 				end
 				table.clear(Boxes)
 			end
-		end
-	})
-	Killaura:CreateToggle({
-		Name = 'Range Visualizer',
-		Function = function(callback)
-			if callback then
-			print("works")																											
 		end
 	})																								
 	BoxColor = Killaura:CreateColorSlider({
