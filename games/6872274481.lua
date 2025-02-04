@@ -2472,14 +2472,7 @@ run(function()
 	})
 	Mouse = Killaura:CreateToggle({Name = 'Require mouse down'})
 	Swing = Killaura:CreateToggle({Name = 'No Swing'})
-	GUI = Killaura:CreateToggle({Name = 'GUI check'})
-
-	RangeCircle = Killaura:CreateToggle({
-		Name = "Range Visualiser",
-		Function = function(callback)
-			if callback then																									
-			vape:createnotification('togged', '5', info)																									
-		})																										
+	GUI = Killaura:CreateToggle({Name = 'GUI check'})																										
 	Killaura:CreateToggle({
 		Name = 'Show target',
 		Function = function(callback)
@@ -2503,6 +2496,13 @@ run(function()
 			end
 		end
 	})
+	Killaura:CreateToggle({
+		Name = 'Range Visualizer',
+		Function = function(callback)
+			if callback then
+			print("works")																											
+		end
+	})																								
 	BoxColor = Killaura:CreateColorSlider({
 		Name = 'Attack Color',
 		Darker = true,
