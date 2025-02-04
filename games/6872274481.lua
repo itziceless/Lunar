@@ -11,7 +11,7 @@ local vapeEvents = setmetatable({}, {
 	end
 })
 
-local horridexec =  identifyexecutor and table.find({'Solara', 'Xeno', 'Sirhurt'}, ({identifyexecutor()})[1])
+local horridexec =  identifyexecutor and table.find({'Solara', 'Xeno', 'AWP'}, ({identifyexecutor()})[1])
 
 local playersService = cloneref(game:GetService('Players'))
 local replicatedStorage = cloneref(game:GetService('ReplicatedStorage'))
@@ -8371,5 +8371,5 @@ GrayPeople = vape.Categories.FFlags:CreateModule({
 end)															
 																																																												
 if horridexec then
-	vape:CreateNotification('Lunar', 'Your currently using a low UNC Executor, Some features might not work correct.', 30, 'alert')
+	vape:CreateNotification('Lunar', 'Your currently using a low UNC Executor, Some features are disabled..', 30, 'alert')
 end
