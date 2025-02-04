@@ -2497,7 +2497,6 @@ run(function()
 						end
 						--bedwars.QueryUtil:setQueryIgnored(RangeCirclePart, true)
 					end
-				end)
 					pcall(function()
 						if RangeCirclePart then
 							RangeCirclePart:Destroy()
