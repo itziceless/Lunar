@@ -2259,9 +2259,12 @@ function mainapi:CreateNotification(title, text, duration, type, continued)
 	textlabel.Parent = notification
 	local info = TweenInfo.new(0.5, Enum.EasingStyle.Exponential, Enum.EasingDirection.Out)
 	if tween.Tween then
-		tween:Tween(scale, info, {
-			Scale = 1
-		}, nil, true)
+			tween:Tween(notification, TweenInfo.new(0.4, Enum.EasingStyle.Exponential), {
+				AnchorPoint = Vector2.new(1, 0)
+			}, tween.tweenstwo)
+			tween:Tween(progress, TweenInfo.new(duration, Enum.EasingStyle.Linear), {
+				Size = UDim2.fromOffset(0, 2)
+			})
 		tween:Tween(notification, info, {
 			BackgroundTransparency = 0.5
 		})
