@@ -2490,9 +2490,8 @@ run(function()
 						RangeCirclePart.Size = Vector3.new(Range.Value * 0.7, 0.01, Range.Value * 0.7)
 						if Killaura.Enabled then
 							RangeCirclePart.Parent = gameCamera
-						end
-					end																										
-				end)
+					end
+				end																										
 			})																										
 	Killaura:CreateToggle({
 		Name = 'Show target',
