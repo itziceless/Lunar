@@ -2478,21 +2478,8 @@ run(function()
 		Name = "Range Visualiser",
 		Function = function(callback)
 			if callback then																									
-				RangeCirclePart = Instance.new("MeshPart")
-					RangeCirclePart.MeshId = "rbxassetid://3726303797"
-							RangeCirclePart.Color = GuiLibrary.GUICoreColor
-							GuiLibrary.GUICoreColorChanged.Event:Connect(function()
-								RangeCirclePart.Color = GuiLibrary.GUICoreColor
-							RangeCirclePart.Color = Color3.fromHSV(BoxColor["Hue"], BoxColor["Sat"], BoxColor.Value)
-						RangeCirclePart.CanCollide = false
-						RangeCirclePart.Anchored = true
-						RangeCirclePart.Material = Enum.Material.Neon
-						RangeCirclePart.Size = Vector3.new(Range.Value * 0.7, 0.01, Range.Value * 0.7)
-						if Killaura.Enabled then
-							RangeCirclePart.Parent = gameCamera
-					end
-				end																								
-			)																										
+			vape:createnotification('togged', '5', info)																									
+		})																										
 	Killaura:CreateToggle({
 		Name = 'Show target',
 		Function = function(callback)
