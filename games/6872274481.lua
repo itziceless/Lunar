@@ -2473,6 +2473,37 @@ run(function()
 	Mouse = Killaura:CreateToggle({Name = 'Require mouse down'})
 	Swing = Killaura:CreateToggle({Name = 'No Swing'})
 	GUI = Killaura:CreateToggle({Name = 'GUI check'})
+	RangeCircle = Killaura:CreateToggle({
+		Name = "Range Visualiser",
+		Function = function(callback)
+			RangeCirclePart = Instance.new("MeshPart")
+				RangeCirclePart.MeshId = "rbxassetid://3726303797"
+					RangeCirclePart.Color = Color3.fromHSV(BoxColor["Hue"], BoxColor["Sat"], BoxColor.Value)
+						RangeCirclePart.CanCollide = false
+						RangeCirclePart.Anchored = true
+						RangeCirclePart.Material = Enum.Material.Neon
+						RangeCirclePart.Size = Vector3.new(Range.Value * 0.7, 0.01, Range.Value * 0.7)
+						if Killaura.Enabled then
+							RangeCirclePart.Parent = gameCamera
+						end
+						--bedwars.QueryUtil:setQueryIgnored(RangeCirclePart, true)
+					end
+				end)
+						if RangeCirclePart then
+							RangeCirclePart:Destroy()
+							RangeCirclePart = nil
+						end
+						InfoNotification("Killaura - Range Visualiser Circle", "There was an error creating the circle. Disabling...", 2)
+					end)
+				end
+			else
+				if RangeCirclePart then
+					RangeCirclePart:Destroy()
+					RangeCirclePart = nil
+				end
+			end
+		end
+																											
 	Killaura:CreateToggle({
 		Name = 'Show target',
 		Function = function(callback)
