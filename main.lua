@@ -8,6 +8,8 @@ if identifyexecutor then
 	end
 end
 
+local badexecutor = false
+
 local vape
 local loadstring = function(...)
 	local res, err = loadstring(...)
@@ -54,7 +56,6 @@ local function finishLoading()
 		until not vape.Loaded
 	end)
 
-	local badexecutor = false
 	if identifyexecutor then
 	if table.find({'Xeno', 'Solara', 'AWP'}, ({identifyexecutor()})[1]) then
 		badexecutor = true
