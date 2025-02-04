@@ -2484,7 +2484,7 @@ run(function()
 							GuiLibrary.GUICoreColorChanged.Event:Connect(function()
 								RangeCirclePart.Color = GuiLibrary.GUICoreColor
 							RangeCirclePart.Color = Color3.fromHSV(BoxColor["Hue"], BoxColor["Sat"], BoxColor.Value)
-						end
+						end)
 						RangeCirclePart.CanCollide = false
 						RangeCirclePart.Anchored = true
 						RangeCirclePart.Material = Enum.Material.Neon
