@@ -111,6 +111,7 @@ if not shared.VapeIndependent then
 		end
 	end
 	finishLoading()
+	vape:CreateNotification('Lunar Private', 'Whitelist found, Lunar loaded in Private' 15)
 else
 	vape.Init = finishLoading
 	return vape
