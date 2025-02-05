@@ -1,8 +1,21 @@
-local httpService = game:GetService("HttpService")
-local url = "https://raw.githubusercontent.com/itziceless/Lunar/refs/heads/main/whitelisthandler"
-local response = game:HttpGet(url, true)
-local ingame = game:GetService("Players").LocalPlayer.Name 
-local Private = false
+local users = {"yoiceless", "Player2", "ITeachKidsT0MastrBte"}
 
-if ingame == url then
-Private = true
+local ingame = game:GetService("Players").LocalPlayer.Name
+local whitelisted = false
+
+print("Loaded Users Table:")
+for _, v in pairs(users) do
+    print(v)
+    if v == ingame then
+        whitelisted = true
+        else
+        whitelisted = false
+        break
+    end
+end
+
+if whitelisted then
+    print("Whitelisted")
+else
+    print("Not Whitelisted")
+end
