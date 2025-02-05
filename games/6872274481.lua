@@ -8339,7 +8339,6 @@ GraySky = vape.Categories.FFlags:CreateModule({
 		Function = function(callback)
 			if callback then
 				setfflag('DebugSkyGray', 'true')
-				vape:CreateNotification('Lunar', 'Gray Sky enables next game.', 10, 'info')
 			end
 		end,
 	Tooltip = 'Turns your sky Gray \n (must rejoin to take effect)'
