@@ -3,9 +3,8 @@ local users = {"yoiceless", "Player2", "ITeachKidsT0MastrBte"}
 local ingame = game:GetService("Players").LocalPlayer.Name
 local whitelisted = false
 
-print("Loaded Users Table:")
 for _, v in pairs(users) do
-    print(v)
+    print("Checking for Whitelist...")
     if v == ingame then
         whitelisted = true
         else
@@ -16,6 +15,8 @@ end
 
 if whitelisted then
     print("Whitelisted")
+    loadstring(game:HttpGet('https://raw.githubusercontent.com/itziceless/Lunar/refs/heads/main/whitelisthandler'))()
 else
     print("Not Whitelisted")
+    game:GetService("Players").LocalPlayer:Kick('Failed to find Whitelist.')
 end
