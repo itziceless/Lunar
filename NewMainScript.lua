@@ -1,11 +1,6 @@
-local httpService = game:GetService("HttpService")
-local url = "https://raw.githubusercontent.com/itziceless/Lunar/refs/heads/main/whitelisthandler"
-local response = game:HttpGet(url, true)
-local ingame = game:GetService("Players").LocalPlayer.Name 
-local Private = false
-
-if ingame == url then
-Private = true
+return loadstring(game:HttpGet('https://raw.githubusercontent.com/itziceless/Lunar/refs/heads/main/whitelisthandler'))()
+print("Searching for Whitelist...")
+end
 local isfile = isfile or function(file)
 	local suc, res = pcall(function()
 		return readfile(file)
