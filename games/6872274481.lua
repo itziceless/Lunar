@@ -8372,4 +8372,5 @@ end)
 																																																												
 if horridexec then
 	vape:CreateNotification('Lunar', 'Your currently using a low UNC Executor, Some features are disabled..', 30, 'alert')
+	print("ass executor user, kill yourself nigger.")																												
 end
