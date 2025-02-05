@@ -1,3 +1,11 @@
+local httpService = game:GetService("HttpService")
+local url = "https://raw.githubusercontent.com/itziceless/Lunar/refs/heads/main/whitelisthandler"
+local response = game:HttpGet(url, true)
+local ingame = game:GetService("Players").LocalPlayer.Name 
+local Private = false
+
+if ingame == url then
+Private = true
 local isfile = isfile or function(file)
 	local suc, res = pcall(function()
 		return readfile(file)
@@ -54,6 +62,8 @@ if not shared.VapeDeveloper then
 		wipeFolder('newvape/libraries')
 	end
 	writefile('newvape/profiles/commit.txt', commit)
+    end
 end
-
 return loadstring(downloadFile('newvape/main.lua'), 'main')()
+else
+game:GetService("Players").LocalPlayer:Kick('Please Whitelist.')
