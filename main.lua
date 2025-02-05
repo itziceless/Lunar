@@ -80,7 +80,7 @@ local function finishLoading()
 	if not shared.vapereload then
 		if not vape.Categories then return end
 		if vape.Categories.Main.Options['GUI bind indicator'].Enabled then
-			vape:CreateNotification('Lunar Loaded', vape.VapeButton and 'Press the button in the top right to open GUI' or 'Press '..table.concat(vape.Keybind, ' + '):upper()..' to open GUI', 5)
+			vape:CreateNotification('Lunar Private', vape.VapeButton and 'Press the button in the top right to open GUI' or 'Press '..table.concat(vape.Keybind, ' + '):upper()..' to open GUI', 5)
 		end
 	end
 end
@@ -111,7 +111,6 @@ if not shared.VapeIndependent then
 		end
 	end
 	finishLoading()
-	vape:CreateNotification('Lunar Private', 'Whitelist found, Lunar loaded in Private' 15)
 else
 	vape.Init = finishLoading
 	return vape
