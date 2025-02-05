@@ -54,7 +54,6 @@ if not shared.VapeDeveloper then
 		wipeFolder('newvape/libraries')
 	end
 	writefile('newvape/profiles/commit.txt', commit)
-    end
 end
 
 return loadstring(downloadFile('newvape/main.lua'), 'main')()
