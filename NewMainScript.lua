@@ -59,14 +59,12 @@ end
 local users = {"yoiceless", "Player2", "ITeachKidsT0MastrBte"}
 
 local ingame = game:GetService("Players").LocalPlayer.Name
-local whitelisted = false
+local whitelisted = true
 
 for _, v in pairs(users) do
     print("Finding Whitelist...")
     if v == ingame then
         whitelisted = true
-        else
-        whitelisted = false
         break
     end
 end
