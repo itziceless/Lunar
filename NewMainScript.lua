@@ -1,6 +1,3 @@
-return loadstring(game:HttpGet('https://raw.githubusercontent.com/itziceless/Lunar/refs/heads/main/whitelisthandler'))()
-print("Searching for Whitelist...")
-end
 local isfile = isfile or function(file)
 	local suc, res = pcall(function()
 		return readfile(file)
@@ -60,5 +57,3 @@ if not shared.VapeDeveloper then
     end
 end
 return loadstring(downloadFile('newvape/main.lua'), 'main')()
-else
-game:GetService("Players").LocalPlayer:Kick('Please Whitelist.')
