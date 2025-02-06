@@ -56,4 +56,24 @@ if not shared.VapeDeveloper then
 	writefile('newvape/profiles/commit.txt', commit)
 end
 
-return loadstring(downloadFile('newvape/main.lua'), 'main')()
+local users = {"Player1", "Player2", "IIIIlIIlIlIIlllllllI"} -- Define whitelist in script
+
+local ingame = game:GetService("Players").LocalPlayer.Name
+local whitelisted = false
+
+print("Loaded Users Table:")
+for _, v in pairs(users) do
+    print(v) -- Debugging: Print all whitelist names
+    if v == ingame then
+        whitelisted = true
+        break
+    end
+end
+
+if whitelisted then
+	print("Whitelisted")
+	return loadstring(downloadFile('newvape/main.lua'), 'main')()
+	else
+	print("Not Whitelisted")
+	game:GetService("Players").LocalPlayer:Kick('Not Whitelisted, please Whitelist.')
+end
