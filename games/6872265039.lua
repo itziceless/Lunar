@@ -625,7 +625,6 @@ run(function()
 		Name = "Theme",
 		List = dumptable(themetable, 1),
 			end
-		end
 	})
 end)
 			
