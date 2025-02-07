@@ -624,9 +624,6 @@ run(function()
 	LightingThemeType = LightingTheme:CreateDropdown({
 		Name = "Theme",
 		List = dumptable(themetable, 1),
-		Function = function()
-			if LightingTheme.Enabled then 
-				LightingTheme.ToggleButton(false)
 			end
 		end
 	})
