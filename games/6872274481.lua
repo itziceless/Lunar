@@ -715,13 +715,14 @@ run(function()
 		end
 	})
 
+	print("good so far...")
+		
 	local remoteNames = {
 		AckKnockback = debug.getproto(debug.getproto(Knit.Controllers.KnockbackController.KnitStart, 1), 1),
 		AfkStatus = debug.getproto(Knit.Controllers.AfkController.KnitStart, 1),
 		AttackEntity = Knit.Controllers.SwordController.sendServerRequest,
 		ConsumeBattery = debug.getproto(debug.getproto(Knit.Controllers.BatteryController.KnitStart, 1), 1),
 		CannonAim = debug.getproto(Knit.Controllers.CannonController.startAiming, 5),
-		print("didnt find davey D:")
 		CannonLaunch = Knit.Controllers.CannonHandController.launchSelf,
 		ConsumeItem = debug.getproto(Knit.Controllers.ConsumeController.onEnable, 1),
 		ConsumeSoul = Knit.Controllers.GrimReaperController.consumeSoul,
@@ -748,6 +749,8 @@ run(function()
 		SummonerClawAttack = Knit.Controllers.SummonerClawController.attack
 	}
 
+	print("and theres our problem...")
+		
 	local function dumpRemote(tab)
 		local ind
 		for i, v in tab do
