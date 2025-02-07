@@ -619,7 +619,7 @@ run(function()
 				themesky = nil
 			end
 		end,
-		Tooltip = 'Automatically opens lucky crates, piston inspired!'						
+		Tooltip = 'Changes the skybox to your liking.'						
 	})
 	LightingThemeType = LightingTheme:CreateDropdown({
 		Name = "Theme",
