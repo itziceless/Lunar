@@ -590,9 +590,6 @@ run(function()
 				task.spawn(function()
 					task.wait()
 					themesky = Instance.new("Sky")
-					local success, err = pcall(themetable[LightingThemeType.Value])
-					err = err and " | "..err or ""
-					vapeAssert(success, "LightingTheme", "Failed to load the "..LightingThemeType.Value.." theme."..err, 5)
 					themesky.Parent = success and lightingService or nil
 					LightingTheme:Clean(lightingService.ChildAdded:Connect(function(v)
 						if success and v:IsA("Sky") then 
