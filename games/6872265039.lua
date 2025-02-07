@@ -624,7 +624,6 @@ run(function()
 	LightingThemeType = LightingTheme:CreateDropdown({
 		Name = "Theme",
 		List = dumptable(themetable, 1),
-			end
 	})
 end)
 			
