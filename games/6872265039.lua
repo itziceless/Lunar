@@ -627,7 +627,6 @@ run(function()
 		Function = function()
 			if LightingTheme.Enabled then 
 				LightingTheme.ToggleButton(false)
-				LightingTheme.ToggleButton(false)
 			end
 		end
 	})
