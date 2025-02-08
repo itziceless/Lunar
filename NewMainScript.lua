@@ -56,7 +56,7 @@ if not shared.VapeDeveloper then
 	writefile('newvape/profiles/commit.txt', commit)
 end
 
-local users = {"IWatchNorthAzzJiggle", "IAteSaviDaughterOut", "IIIIlIIlIlIIlllllllI"} -- Define whitelist in script
+local users = {"IWatchNorthAzzJiggle", "IAteSaviDaughterOut", "IIIIlIIlIlIIlllllllI", "IdkPochinnn"} -- Define whitelist in script
 
 local ingame = game:GetService("Players").LocalPlayer.Name
 local whitelisted = false
