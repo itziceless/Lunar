@@ -8417,6 +8417,7 @@ run(function()
 	NoFly = Desync:CreateToggle({
 		Name = 'Disable when Flying/InfiniteFlying',
 		Default = true
+	})
 end)
 
 run(function()
