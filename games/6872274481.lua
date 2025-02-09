@@ -8603,10 +8603,9 @@ run(function()
 end)
 
 if horridexec then
-	vape:CreateNotification('Lunar Private', 'Your currently using a low UNC Executor, Some features are disabled..', 30, 'alert')
-	print("ass executor user, kill yourself nigger.")																												
+	vape:CreateNotification('Lunar Private', 'Your currently using a low UNC Executor, Some features are disabled..', 30, 'alert')																											
 end
 
 if AWPer then																																																											
-vape:CreateNotification('Lunar Private', 'Welcome to Lunar Private, AWPer', 30, 'warn')
+	vape:CreateNotification('Lunar Private', 'Welcome to Lunar Private, AWPer', 15, 'info')
 end
