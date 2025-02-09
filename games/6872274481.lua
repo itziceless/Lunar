@@ -8439,3 +8439,172 @@ AntiHit = vape.Categories.Blatant:CreateModule({
 	})
 end)
 
+run(function()
+	local autobankui;
+	local AutoBank
+	local explode = false
+	local wowie = {}
+	local alldropped = false
+	local sigmaitems3 = {}
+	local sigmaitems = {}
+	AutoBank = vape.Categories.Utility:CreateModule({
+		Name = 'AutoBank',
+		Function = function(callback)
+			if callback then
+				if autobankui then
+					autobankui:Destroy()
+					autobankui = nil
+				end
+				autobankui = Instance.new('Frame')
+				autobankui.Size = UDim2.new(0, 240, 0, 40)
+				autobankui.AnchorPoint = Vector2.new(0.5, 0)
+				autobankui.Position = UDim2.new(0.5, 0, 0, -240)
+				autobankui.Visible = true
+				task.spawn(function()
+					repeat
+						task.wait()
+						if autobankui then 
+							local hotbar = lplr.PlayerGui:FindFirstChild('hotbar')
+							if hotbar then 
+								local healthbar = hotbar['1']:FindFirstChild('HotbarHealthbarContainer')
+								if healthbar then 
+									autobankui.Position = UDim2.new(0.5, 0, 0, healthbar.AbsolutePosition.Y - 30)
+								end
+							end
+						else
+							break
+						end
+					until (not AutoBank.Enabled)
+				end)
+				autobankui.BackgroundTransparency = 1
+				autobankui.Parent = vape.gui
+				local emerald = Instance.new('ImageLabel')
+				emerald.Image = bedwars.getIcon({itemType = 'emerald'}, true)
+				emerald.Size = UDim2.new(0, 40, 0, 40)
+				emerald.Name = 'emerald'
+				emerald.Position = UDim2.new(0, 160, 0, 0)
+				emerald.BackgroundTransparency = 1
+				emerald.Parent = autobankui
+				local emeraldtext = Instance.new('TextLabel')
+				emeraldtext.TextSize = 20
+				emeraldtext.BackgroundTransparency = 1
+				emeraldtext.Size = UDim2.new(1, 0, 1, 0)
+				emeraldtext.Font = Enum.Font.SourceSans
+				emeraldtext.TextStrokeTransparency = 0.3
+				emeraldtext.Name = 'amount'
+				emeraldtext.Text = '0'
+				emeraldtext.TextColor3 = Color3.new(1, 1, 1)
+				emeraldtext.Parent = emerald
+				local diamond = emerald:Clone()
+				diamond.Image = bedwars.getIcon({itemType = 'diamond'}, true)
+				diamond.Position = UDim2.new(0, 120, 0, 0)
+				diamond.Name = 'diamond'
+				diamond.Parent = autobankui
+				local gold = emerald:Clone()
+				gold.Image = bedwars.getIcon({itemType = 'gold'}, true)
+				gold.Position = UDim2.new(0, 80, 0, 0)
+				gold.Name = 'gold'
+				gold.Parent = autobankui
+				local iron = emerald:Clone()
+				iron.Image = bedwars.getIcon({itemType = 'iron'}, true)
+				iron.Position = UDim2.new(0, 40, 0, 0)
+				iron.Name = 'iron'
+				iron.Parent = autobankui
+				local echest = replicatedStorage.Inventories:FindFirstChild(lplr.Name..'_personal')
+				task.spawn(function()
+					AutoBank:Clean(workspace.ItemDrops.ChildAdded:Connect(function(v)
+						for _, x in sigmaitems2 do
+							if isnetworkowner(v) and v:GetAttribute('DropTime') == x then
+								v.CFrame = v.CFrame + Vector3.new(0, 10000, 0)
+								v.Anchored = true
+								v.Transparency = 1
+								table.insert(sigmaitems, v)
+							end
+						end
+					end))
+					repeat
+						task.wait(0.1)
+						if entitylib.isAlive then
+							for _, v in store.shop do
+								if (v.RootPart.Position - entitylib.character.RootPart.Position).Magnitude <= 20 and not table.find(wowie, v.RootPart.Position) then
+									table.insert(wowie, v.RootPart.Position)
+									explode = true
+								elseif explode and not alldropped then
+									for _, v in sigmaitems do
+										task.wait()
+										v.CFrame = entitylib.character.RootPart.CFrame
+										v.Anchored = false
+										v.Velocity = Vector3.new(0, 0, 0)
+										v.Transparency = 1
+										task.spawn(function()
+											for i = 1,5 do 
+												replicatedStorage.rbxts_include.node_modules['@rbxts'].net.out._NetManaged.PickupItemDrop:InvokeServer({itemDrop = v})
+												task.wait(0.15)
+											end
+										end)
+									end
+									alldropped = true
+									sigmaitems = {}
+									sigmaitems2 = {}
+									sigmaitems3 = {}
+									task.spawn(function()
+										repeat task.wait()
+											alldropped = false
+											for _, x in wowie do
+												if (x - entitylib.character.RootPart.Position).Magnitude >= 21 then
+													explode = false
+													wowie = {}
+												end
+											end
+										until (not AutoBank.Enabled or not explode)
+									end)
+								elseif alldropped then
+									for i,v in autobankui:GetChildren() do
+										v.amount.Text = '0'
+									end
+								else
+									for _, item in {'iron', 'diamond', 'emerald', 'gold'} do 
+										local itemname = item
+										item = getItem(item)
+										if item then
+											wowie = {}
+											table.insert(sigmaitems2, math.floor(workspace:GetServerTimeNow())) 
+											local itemamount = item.amount
+											item = replicatedStorage.rbxts_include.node_modules['@rbxts'].net.out._NetManaged.DropItem:InvokeServer({
+												item = item.tool,
+												amount = item.amount
+											})
+											if not sigmaitems3[itemname] then
+												sigmaitems3[itemname] = {}
+											end
+											table.insert(sigmaitems3[itemname], item);
+											local amount1 = itemamount + tonumber(autobankui:FindFirstChild(itemname).amount.Text)
+											local amount = tostring(amount1);
+											amount = #amount >= 5 and '9999+' or amount
+											autobankui:FindFirstChild(itemname).amount.Text = amount
+										end
+									end
+								end
+							end
+						end
+					until (not AutoBank.Enabled)
+				end)
+			else
+				if autobankui then
+					autobankui:Destroy()
+					autobankui = nil
+				end
+				alldropped = false
+				explode = false
+				for _, v in sigmaitems do
+					v.CFrame = entitylib.character.RootPart.CFrame
+				end
+				sigmaitems = {}
+				sigmaitems2 = {}
+				sigmaitems3 = {}
+				wowie = {}
+			end
+		end,
+		Tooltip = 'Automatically store items so you don\'t lose them.'
+	})
+end) --p
