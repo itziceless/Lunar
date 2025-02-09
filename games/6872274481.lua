@@ -1375,17 +1375,6 @@ run(function()
 		Tooltip = 'Remove the CPS cap'
 	})
 end)
-
-run(function()
-	HitFix = vape.Categories.Combat:CreateModule({
-		Name = 'HitFix',
-		Function = function(callback)
-			debug.setconstant(bedwars.SwordController.swingSwordAtMouse, 23, callback and 'raycast' or 'Raycast')
-			debug.setupvalue(bedwars.SwordController.swingSwordAtMouse, 4, callback and bedwars.QueryUtil or workspace)
-		end,
-		Tooltip = 'Changes the raycast function to the correct one, Because Bedwars devs are Retarded'
-	})
-end)
 				
 run(function()
 	local Value
@@ -3976,7 +3965,7 @@ run(function()
 	})
 end)
 	
-run(function()
+--[[run(function()
 	local AutoBalloon
 	
 	AutoBalloon = vape.Categories.Utility:CreateModule({
@@ -4012,7 +4001,7 @@ run(function()
 		end,
 		Tooltip = 'Inflates when you fall into the void'
 	})
-end)
+end)--]]
 	
 run(function()
 	local AutoKit
@@ -4629,7 +4618,7 @@ OwlCheck = AutoVoidDrop:CreateToggle({
 end)
 
 	
-run(function()
+--[[run(function()
 	local MissileTP
 	
 	MissileTP = vape.Categories.Utility:CreateModule({
@@ -4668,7 +4657,7 @@ run(function()
 		end,
 		Tooltip = 'Spawns and teleports a missile to a player\nnear your mouse.'
 	})
-end)
+end)--]]
 	
 run(function()
 	local PickupRange
@@ -4733,7 +4722,7 @@ run(function()
 	Lower = PickupRange:CreateToggle({Name = 'Feet Check'})
 end)
 	
-run(function()
+--[[run(function()
 	local RavenTP
 	
 	RavenTP = vape.Categories.Utility:CreateModule({
@@ -4773,7 +4762,7 @@ run(function()
 		end,
 		Tooltip = 'Spawns and teleports a raven to a player\nnear your mouse.'
 	})
-end)
+end)--]]
 	
 run(function()
 	local Scaffold
@@ -4988,7 +4977,7 @@ run(function()
 	local Profile
 	local Users
 	local blacklistedclans = {'gg', 'gg2', 'DV', 'DV2', 'nwr', 'F3D'}
-	local blacklisteduserids = {1502104539, 3826146717, 4531785383, 1049767300, 4926350670, 653085195, 184655415, 2752307430, 5087196317, 5744061325, 1536265275, 2431747703, 4080246754, 307212658, 5097000699, 4923561416, 70235433, 589533315, 162442297, 547598710, 4782733628, 7447190808, 22808138, 5728889572, 4652232128, 7547477786, 7574577126, 2043525911, 5816563976, 240526951, 4531785383, 7718511355, 1502104539, 7435761093, 7495829767, 1708400489}
+	local blacklisteduserids = {1502104539, 3826146717, 4531785383, 1049767300, 4926350670, 653085195, 184655415, 2752307430, 5087196317, 5744061325, 1536265275, 2431747703, 4080246754, 307212658, 5097000699, 4923561416, 70235433, 589533315, 162442297, 547598710, 4782733628, 7447190808, 22808138, 5728889572, 4652232128, 7547477786, 7574577126, 2043525911, 5816563976, 240526951, 4531785383, 7718511355, 1502104539, 7435761093, 7495829767, 1708400489, 7974168365}
 	local joined = {}
 	
 	local function getRole(plr, id)
@@ -5363,8 +5352,9 @@ run(function()
 		Default = true
 	})
 end)
-	
-run(function()
+
+									
+--[[run(function()
 	local Schematica
 	local File
 	local Mode
@@ -5416,10 +5406,10 @@ run(function()
 		if suc and read then
 			local items = {}
 			for _, v in read do 
-				items[v[2]] = (items[v[2]] or 0) + 1 
-			end
+				items[v[2]]-- = (items[v[2]] or 0) + 1 
+			--end
 			
-			for i, v in items do
+		--[[	for i, v in items do
 				local holder = Instance.new('Frame')
 				holder.Size = UDim2.new(1, 0, 0, 32)
 				holder.BackgroundTransparency = 1
@@ -5529,89 +5519,7 @@ run(function()
 				Schematica:Toggle()
 			end
 		end
-	end
-
-run(function()
-    local anim
-	local asset
-	local lastPosition
-    local NightmareEmote
-	NightmareEmote = vape.Categories.World:CreateModule({
-		Name = "NightmareEmote",
-		Function = function(call)
-			if call then
-				local l__GameQueryUtil__8
-				if (not shared.CheatEngineMode) then 
-					l__GameQueryUtil__8 = require(game:GetService("ReplicatedStorage")['rbxts_include']['node_modules']['@easy-games']['game-core'].out).GameQueryUtil 
-				else
-					local backup = {}; function backup:setQueryIgnored() end; l__GameQueryUtil__8 = backup;
-				end
-				local l__TweenService__9 = game:GetService("TweenService")
-				local player = game:GetService("Players").LocalPlayer
-				local p6 = player.Character
-				
-				if not p6 then NightmareEmote:Toggle() return end
-				
-				local v10 = game:GetService("ReplicatedStorage"):WaitForChild("Assets"):WaitForChild("Effects"):WaitForChild("NightmareEmote"):Clone();
-				asset = v10
-				v10.Parent = game.Workspace
-				lastPosition = p6.PrimaryPart and p6.PrimaryPart.Position or Vector3.new()
-				
-				task.spawn(function()
-					while asset ~= nil do
-						local currentPosition = p6.PrimaryPart and p6.PrimaryPart.Position
-						if currentPosition and (currentPosition - lastPosition).Magnitude > 0.1 then
-							asset:Destroy()
-							asset = nil
-							NightmareEmote:Toggle()
-							break
-						end
-						lastPosition = currentPosition
-						v10:SetPrimaryPartCFrame(p6.LowerTorso.CFrame + Vector3.new(0, -2, 0));
-						task.wait()
-					end
-				end)
-				
-				local v11 = v10:GetDescendants();
-				local function v12(p8)
-					if p8:IsA("BasePart") then
-						l__GameQueryUtil__8:setQueryIgnored(p8, true);
-						p8.CanCollide = false;
-						p8.Anchored = true;
-					end;
-				end;
-				for v13, v14 in ipairs(v11) do
-					v12(v14, v13 - 1, v11);
-				end;
-				local l__Outer__15 = v10:FindFirstChild("Outer");
-				if l__Outer__15 then
-					l__TweenService__9:Create(l__Outer__15, TweenInfo.new(1.5, Enum.EasingStyle.Linear, Enum.EasingDirection.Out, -1), {
-						Orientation = l__Outer__15.Orientation + Vector3.new(0, 360, 0)
-					}):Play();
-				end;
-				local l__Middle__16 = v10:FindFirstChild("Middle");
-				if l__Middle__16 then
-					l__TweenService__9:Create(l__Middle__16, TweenInfo.new(12.5, Enum.EasingStyle.Linear, Enum.EasingDirection.Out, -1), {
-						Orientation = l__Middle__16.Orientation + Vector3.new(0, -360, 0)
-					}):Play();
-				end;
-                anim = Instance.new("Animation")
-				anim.AnimationId = "rbxassetid://9191822700"
-				anim = p6.Humanoid:LoadAnimation(anim)
-				anim:Play()
-			else 
-                if anim then 
-					anim:Stop()
-					anim = nil
-				end
-				if asset then
-					asset:Destroy() 
-					asset = nil
-				end
-			end
-		end
-	})
-end)
+	end--]]
 
 	run(function()
 	local AutoSuffocate
