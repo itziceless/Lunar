@@ -5592,7 +5592,7 @@ end)
 	})
 end)								
 
-	Schematica = vape.Categories.World:CreateModule({
+	--[[Schematica = vape.Categories.World:CreateModule({
 		Name = 'Schematica',
 		Function = function(callback)
 			if callback then
@@ -5649,7 +5649,7 @@ end)
 			end
 		end
 	})
-end)
+end)--]]
 
 run(function()
 	local ArmorSwitch
