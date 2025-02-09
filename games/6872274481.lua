@@ -8427,7 +8427,7 @@ AntiHit = vape.Categories.Blatant:CreateModule({
 								end
 							end
 						end
-					end)
+					end
 				end)
 			end)
 	})
