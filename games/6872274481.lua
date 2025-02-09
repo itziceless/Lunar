@@ -8381,8 +8381,8 @@ run(function()
 		if plr.Character:FindFirstChild("Humanoid").Health < 0.11 then return false end
 		return true
 	end
-	local GodMode = {Enabled = false}
-	local Slowmode = {Value = 2}
+	local AntiHit
+	local Slowmode
 	AntiHit = vape.Categories.FFlags:CreateModule({
 		Name = "AntiHi",
 		Function = function(callback)
