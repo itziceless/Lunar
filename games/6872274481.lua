@@ -5019,11 +5019,6 @@ run(function()
 					end
 					v:SetBind('')
 				end
-		elseif Mode.Value == 'Panic' then 
-				for _, v in vape.Modules do
-					if v.Enabled then
-						v:Toggle()
-				end
 			end
 		end
 	end
@@ -5106,7 +5101,7 @@ run(function()
 	})
 	Mode = StaffDetector:CreateDropdown({
 		Name = 'Mode',
-		List = {'Uninject', 'Profile', 'AutoConfig', 'Notify', 'Panic'},
+		List = {'Uninject', 'Profile', 'AutoConfig', 'Notify'},
 		Function = function(val)
 			if Profile.Object then
 				Profile.Object.Visible = val == 'Profile'
