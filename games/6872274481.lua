@@ -11,6 +11,8 @@ local vapeEvents = setmetatable({}, {
 	end
 })
 
+
+local AWPer =  identifyexecutor and table.find({'AWP'}, ({identifyexecutor()})[1])
 local horridexec =  identifyexecutor and table.find({'Solara', 'Xeno', 'Cloudy'}, ({identifyexecutor()})[1])
 
 local playersService = cloneref(game:GetService('Players'))
@@ -8601,6 +8603,9 @@ run(function()
 end)
 
 if horridexec then
-	vape:CreateNotification('Lunar', 'Your currently using a low UNC Executor, Some features are disabled..', 30, 'alert')
+	vape:CreateNotification('Lunar Private', 'Your currently using a low UNC Executor, Some features are disabled..', 30, 'alert')
 	print("ass executor user, kill yourself nigger.")																												
 end
+
+if AWPer then																																																											
+vape:CreateNotification('Lunar Private', 'Welcome to Lunar Private, AWPer', 30, 'warn')
