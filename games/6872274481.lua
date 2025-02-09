@@ -8373,24 +8373,14 @@ if AWPer then
 end
 
 run(function()
-	function IsAlive(plr)
-		plr = plr or lplr
-		if not plr.Character then return false end
-		if not plr.Character:FindFirstChild("Head") then return false end
-		if not plr.Character:FindFirstChild("Humanoid") then return false end
-		if plr.Character:FindFirstChild("Humanoid").Health < 0.11 then return false end
-		return true
-	end
-	local AntiHit
-	local Slowmode
-	AntiHit = vape.Categories.FFlags:CreateModule({
-		Name = "AntiHi",
-		Function = function(callback)
+local AntiHit 
+local Slowmode
+
+AntiHit = vape.Categories.Blatant:CreateModule({
+	Name = "AntiHit",
+	Function = function(callback)
 			if callback then
-				task.spawn(function()
-					repeat task.wait()
-						pcall(function()
-							if (not vape.Modules.Fly.Enabled) and (not vape.Modules.InfiniteFly.Enabled) then
+				if (not vape.Modules.Fly.Enabled) and (not vape.Modules.InfiniteFly.Enabled) then
 								for i, v in pairs(game:GetService("Players"):GetChildren()) do
 									if v.Team ~= lplr.Team and IsAlive(v) and IsAlive(lplr) then
 										if v and v ~= lplr then
@@ -8436,13 +8426,12 @@ run(function()
 									end
 								end
 							end
-						end)
-					until (not AntiHit.Enabled)
+						end
+					end
 				end)
-			end
-		end
+			end)
 	})
-	Slowmode = AntiHit.CreateSlider({
+	Slowmode = GodMode.CreateSlider({
 		Name = "Slowmode",
 		Function = function() end,
 		Default = 2,
