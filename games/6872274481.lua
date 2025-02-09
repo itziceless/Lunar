@@ -8430,7 +8430,7 @@ AntiHit = vape.Categories.Blatant:CreateModule({
 					end,
 			Tooltip = 'Makes your virtually unhittable'
 	})
-	Slowmode = GodMode.CreateSlider({
+	Slowmode = AntiHit:CreateSlider({
 		Name = "Slowmode",
 		Function = function() end,
 		Default = 2,
