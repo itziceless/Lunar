@@ -35,4 +35,4 @@ If its not the supposed utility at fault, please try some troubleshooting steps.
 3. Ensuring no external script is conflicting with vape.
 
 ## Developers & Credits
-[7GrandDad](https://github.com/itziceless) - Lead maintainer of the project 
+[Iceless](https://github.com/itziceless) - Lead maintainer of the project 
