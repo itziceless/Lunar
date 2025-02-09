@@ -8359,7 +8359,6 @@ run(function()
 	local AutoSendLength
 	local NoFly
 	local oldphys, oldsend
-	local NoInfiniteFly
 	
 	Desync = vape.Categories.FFlags:CreateModule({
 		Name = 'Desync',
@@ -8415,7 +8414,7 @@ run(function()
 		end
 	})
 	NoFly = Desync:CreateToggle({
-		Name = 'Disable when Flying/InfiniteFlying',
+		Name = 'Disable while Flying',
 		Default = true
 	})
 end)
