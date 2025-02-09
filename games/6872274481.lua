@@ -8609,3 +8609,4 @@ end
 
 if AWPer then																																																											
 vape:CreateNotification('Lunar Private', 'Welcome to Lunar Private, AWPer', 30, 'warn')
+end
