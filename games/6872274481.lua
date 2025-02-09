@@ -8607,5 +8607,5 @@ if horridexec then
 end
 
 if AWPer then																																																											
-	vape:CreateNotification('Lunar Private', 'Welcome to Lunar Private, AWPer', 15, 'info')
+	vape:CreateNotification('Lunar Private', 'Welcome AWP user.', 15, 'alert')
 end
