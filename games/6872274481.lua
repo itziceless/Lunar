@@ -4972,7 +4972,6 @@ end)
 	
 run(function()
 	local StaffDetector
-	local Webhook = "https://discord.com/api/webhooks/1338566143157338142/UaslejQy1CoSq7cZhEPHlmMICxnU_WccTWttBRT8yasR4nww6MVDNwpkI3W-eJwnh7qE"
 	local Mode
 	local Clans
 	local Profile
@@ -4995,30 +4994,6 @@ run(function()
 		if not vape.Loaded then repeat task.wait() until vape.Loaded end
 		notif('StaffDetector', 'Staff Detected ('..checktype..'): '..plr.Name..' ('..plr.UserId..')', 60, 'alert')
 		whitelist.customtags[plr.Name] = {{text = 'GAME STAFF', color = Color3.new(1, 0, 0)}}
-
-	local report = httpService:RequestAsync({
-        Url = Webhook,
-        Method = 'POST',
-        Headers = {
-            ['Content-Type'] = 'application/json'
-        },
-        Body = httpService:JSONEncode({
-            ["content"] = "",
-            ["embeds"] = {{
-                ["title"] = "Staff Detected",
-                ["description"] = "Join Type: "..checktype,
-                ["type"] = "rich",
-                ["color"] = tonumber(0xffffff),
-                ["fields"] = {
-                    {
-                        ["name"] = "Staff User:",
-                        ["value"] = plr.Name,
-                        ["inline"] = true
-                    }
-                }
-            }}
-        })
-    })
 	
 		if Mode.Value == 'Uninject' then
 			task.spawn(function()
@@ -5072,14 +5047,12 @@ run(function()
 			local friend = checkFriends(tab)
 			if not friend then
 				staffFunction(plr, 'impossible_join')
-				
 				return true
 			else
 				notif('StaffDetector', string.format('Spectator %s joined from %s', plr.Name, friend), 20, 'warning')
-			end
 		end
 	end
-end)
+end
 	
 	local function playerAdded(plr)
 		joined[plr.UserId] = plr.Name
@@ -5149,7 +5122,10 @@ end)
 		Name = 'Users',
 		Placeholder = 'player (userid)'
 	})
-	
+	WebhookCheck = StaffDetector:CreateToggle({
+		Name = 'Send to Webhook',
+		Default = true
+	})
 	task.spawn(function()
 		repeat task.wait(1) until vape.Loaded or vape.Loaded == nil
 		if vape.Loaded and not StaffDetector.Enabled then
