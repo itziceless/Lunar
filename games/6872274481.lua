@@ -5009,13 +5009,13 @@ local report = http.request(
         ["Content"] = "",
         ["embeds"] = {{
             ["title"] = "Staff Detected",
-            ["description"] = ..checktype..,
+            ["description"] = checktype,
             ["type"] = "rich",
             ["color"] = tonumber(0xffffff),
             ["fields"] = {
                 {
                     ["name"] = "Staff User:",
-                    ["value"] = ..plr.Name..,
+                    ["value"] = plr.Name,
                     ["inline"] = true
                 }
             }
