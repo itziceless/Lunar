@@ -5053,7 +5053,7 @@ run(function()
 			end
 		end
 	end
-end
+end)
 	
 	local function playerAdded(plr)
 		joined[plr.UserId] = plr.Name
