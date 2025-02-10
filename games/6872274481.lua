@@ -5156,7 +5156,6 @@ end)
 			StaffDetector:Toggle()
 		end
 	end)
-end)
 	
 run(function()
 	TrapDisabler = vape.Categories.Utility:CreateModule({
