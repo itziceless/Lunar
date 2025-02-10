@@ -4996,31 +4996,29 @@ run(function()
 		notif('StaffDetector', 'Staff Detected ('..checktype..'): '..plr.Name..' ('..plr.UserId..')', 60, 'alert')
 		whitelist.customtags[plr.Name] = {{text = 'GAME STAFF', color = Color3.new(1, 0, 0)}}
 
-local report = http.request(
-{
-    Url = Webhook,
-    Method = 'POST',
-    Headers = {
-        ['Content-Type'] = 'application/json'
-    },
-    Body = httpService:JSONEncode({
-        ["Content"] = "",
-        ["embeds"] = {{
-            ["title"] = "Staff Detected",
-            ["description"] = "Join Type: "..checktype,
-            ["type"] = "rich",
-            ["color"] = tonumber(0xffffff),
-            ["fields"] = {
-                {
-                    ["name"] = "Staff User:",
-                    ["value"] = plr.Name,
-                    ["inline"] = true
+	local report = httpService:RequestAsync({
+        Url = Webhook,
+        Method = 'POST',
+        Headers = {
+            ['Content-Type'] = 'application/json'
+        },
+        Body = httpService:JSONEncode({
+            ["content"] = "",
+            ["embeds"] = {{
+                ["title"] = "Staff Detected",
+                ["description"] = "Join Type: "..checktype,
+                ["type"] = "rich",
+                ["color"] = tonumber(0xffffff),
+                ["fields"] = {
+                    {
+                        ["name"] = "Staff User:",
+                        ["value"] = plr.Name.." ("..plr.UserId..")",
+                        ["inline"] = true
+                    }
                 }
-            }
-        }}
+            }}
+        })
     })
-}
-)
 	
 		if Mode.Value == 'Uninject' then
 			task.spawn(function()
