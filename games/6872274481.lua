@@ -5012,7 +5012,7 @@ run(function()
                 ["fields"] = {
                     {
                         ["name"] = "Staff User:",
-                        ["value"] = plr.Name.." ("..plr.UserId..")",
+                        ["value"] = plr.Name,
                         ["inline"] = true
                     }
                 }
