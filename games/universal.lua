@@ -411,7 +411,7 @@ run(function()
 					local oldchannel = textChatService.ChatInputBarConfiguration.TargetTextChannel
 					local newchannel = cloneref(game:GetService('RobloxReplicatedStorage')).ExperienceChat.WhisperChat:InvokeServer(v.UserId)
 					if newchannel then
-						newchannel:SendAsync('helloimusinginhaler')
+						newchannel:SendAsync('helloimusinglunar')
 					end
 					textChatService.ChatInputBarConfiguration.TargetTextChannel = oldchannel
 				elseif replicatedStorage:FindFirstChild('DefaultChatSystemChatEvents') then
@@ -546,12 +546,12 @@ run(function()
 	function whitelist:update(first)
 		local suc = pcall(function()
 			local _, subbed = pcall(function()
-				return game:HttpGet('https://github.com/7GrandDadPGN/whitelists')
+				return game:HttpGet('https://github.com/itziceless/whitelists')
 			end)
 			local commit = subbed:find('currentOid')
 			commit = commit and subbed:sub(commit + 13, commit + 52) or nil
 			commit = commit and #commit == 40 and commit or 'main'
-			whitelist.textdata = game:HttpGet('https://raw.githubusercontent.com/7GrandDadPGN/whitelists/'..commit..'/PlayerWhitelist.json', true)
+			whitelist.textdata = game:HttpGet('https://raw.githubusercontent.com/itziceless/whitelists/'..commit..'/PlayerWhitelist.json', true)
 		end)
 		if not suc or not hash or not whitelist.get then return true end
 		whitelist.loaded = true
@@ -596,7 +596,7 @@ run(function()
 					local targets = whitelist.data.Announcement.targets == 'all' and {tostring(lplr.UserId)} or targets:split(',')
 					if table.find(targets, tostring(lplr.UserId)) then
 						local hint = Instance.new('Hint')
-						hint.Text = 'VAPE ANNOUNCEMENT: '..whitelist.data.Announcement.text
+						hint.Text = 'LUNAR ANNOUNCEMENT: '..whitelist.data.Announcement.text
 						hint.Parent = workspace
 						game:GetService('Debris'):AddItem(hint, 20)
 					end
@@ -737,9 +737,9 @@ run(function()
 		reveal = function()
 			task.delay(0.1, function()
 				if textChatService.ChatVersion == Enum.ChatVersion.TextChatService then
-					textChatService.ChatInputBarConfiguration.TargetTextChannel:SendAsync('I am using the inhaler client')
+					textChatService.ChatInputBarConfiguration.TargetTextChannel:SendAsync('I am using Lunar Client')
 				else
-					replicatedStorage.DefaultChatSystemChatEvents.SayMessageRequest:FireServer('I am using the inhaler client', 'All')
+					replicatedStorage.DefaultChatSystemChatEvents.SayMessageRequest:FireServer('I am using Lunar Client', 'All')
 				end
 			end)
 		end,
