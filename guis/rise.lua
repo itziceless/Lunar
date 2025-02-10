@@ -13,7 +13,7 @@ local mainapi = {
 	Modules = {},
 	Notifications = {Enabled = true},
 	Place = game.PlaceId,
-	Profile = 'default',
+	Profile = 'Lunar',
 	Profiles = {},
 	RainbowSpeed = {Value = 1},
 	RainbowUpdateSpeed = {Value = 60},
