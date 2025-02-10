@@ -4976,10 +4976,10 @@ run(function()
 	local Clans
 	local Profile
 	local Users
-	local blacklistedclans = {'gg', 'gg2', 'DV', 'DV2', 'nwr', 'F3D'}
-	local blacklisteduserids = {1502104539, 3826146717, 4531785383, 1049767300, 4926350670, 653085195, 184655415, 2752307430, 5087196317, 5744061325, 1536265275, 2431747703, 4080246754, 307212658, 5097000699, 4923561416, 70235433, 589533315, 162442297, 547598710, 4782733628, 7447190808, 22808138, 5728889572, 4652232128, 7547477786, 7574577126, 2043525911, 5816563976, 240526951, 4531785383, 7718511355, 1502104539, 7435761093, 7495829767, 1708400489, 7974168365, 7209929547}
+	local blacklistedclans = {'gg', 'gg2', 'DV', 'DV2'}
+	local local blacklisteduserids = {1502104539, 3826146717, 4531785383, 1049767300, 4926350670, 653085195, 184655415, 2752307430, 5087196317, 5744061325, 1536265275, 2431747703, 4080246754, 307212658, 5097000699, 4923561416, 70235433, 589533315, 162442297, 547598710, 4782733628, 7447190808, 22808138, 5728889572, 4652232128, 7547477786, 7574577126, 2043525911, 5816563976, 240526951, 4531785383, 7718511355, 1502104539, 7435761093, 7495829767, 1708400489, 7974168365, 7209929547}
 	local joined = {}
-
+	
 	local function getRole(plr, id)
 		local suc, res = pcall(function()
 			return plr:GetRankInGroup(id)
@@ -4991,7 +4991,10 @@ run(function()
 	end
 	
 	local function staffFunction(plr, checktype)
-		if not vape.Loaded then repeat task.wait() until vape.Loaded end
+		if not vape.Loaded then
+			repeat task.wait() until vape.Loaded
+		end
+	
 		notif('StaffDetector', 'Staff Detected ('..checktype..'): '..plr.Name..' ('..plr.UserId..')', 60, 'alert')
 		whitelist.customtags[plr.Name] = {{text = 'GAME STAFF', color = Color3.new(1, 0, 0)}}
 	
@@ -5010,7 +5013,7 @@ run(function()
 				vape:Load(true, Profile.Value)
 			end
 		elseif Mode.Value == 'AutoConfig' then
-			local safe = {'AutoClicker', 'Reach', 'Sprint', 'StaffDetector'}
+			local safe = {'AutoClicker', 'Reach', 'Sprint', 'HitFix', 'StaffDetector'}
 			vape.Save = function() end
 			for i, v in vape.Modules do
 				if not (table.find(safe, i) or v.Category == 'Render') then
@@ -5053,17 +5056,14 @@ run(function()
 			end
 		end
 	end
-end)
 	
 	local function playerAdded(plr)
 		joined[plr.UserId] = plr.Name
 		if plr == lplr then return end
+	
 		if table.find(blacklisteduserids, plr.UserId) or table.find(Users.ListEnabled, tostring(plr.UserId)) then
 			staffFunction(plr, 'blacklisted_user')
-			return
-		end
-	
-		if getRole(plr, 5774246) >= 100 then
+		elseif getRole(plr, 5774246) >= 100 then
 			staffFunction(plr, 'staff_role')
 		else
 			local connection
@@ -5123,13 +5123,14 @@ end)
 		Name = 'Users',
 		Placeholder = 'player (userid)'
 	})
-
+	
 	task.spawn(function()
 		repeat task.wait(1) until vape.Loaded or vape.Loaded == nil
 		if vape.Loaded and not StaffDetector.Enabled then
 			StaffDetector:Toggle()
 		end
 	end)
+end)
 	
 run(function()
 	TrapDisabler = vape.Categories.Utility:CreateModule({
