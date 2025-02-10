@@ -5050,6 +5050,7 @@ run(function()
 				return true
 			else
 				notif('StaffDetector', string.format('Spectator %s joined from %s', plr.Name, friend), 20, 'warning')
+			end
 		end
 	end
 end
