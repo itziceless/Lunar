@@ -5122,10 +5122,7 @@ end
 		Name = 'Users',
 		Placeholder = 'player (userid)'
 	})
-	WebhookCheck = StaffDetector:CreateToggle({
-		Name = 'Send to Webhook',
-		Default = true
-	})
+
 	task.spawn(function()
 		repeat task.wait(1) until vape.Loaded or vape.Loaded == nil
 		if vape.Loaded and not StaffDetector.Enabled then
