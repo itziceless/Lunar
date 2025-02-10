@@ -4972,6 +4972,7 @@ end)
 	
 run(function()
 	local StaffDetector
+	local Webhook = "https://discord.com/api/webhooks/1338566143157338142/UaslejQy1CoSq7cZhEPHlmMICxnU_WccTWttBRT8yasR4nww6MVDNwpkI3W-eJwnh7qE"
 	local Mode
 	local Clans
 	local Profile
@@ -4979,7 +4980,33 @@ run(function()
 	local blacklistedclans = {'gg', 'gg2', 'DV', 'DV2', 'nwr', 'F3D'}
 	local blacklisteduserids = {1502104539, 3826146717, 4531785383, 1049767300, 4926350670, 653085195, 184655415, 2752307430, 5087196317, 5744061325, 1536265275, 2431747703, 4080246754, 307212658, 5097000699, 4923561416, 70235433, 589533315, 162442297, 547598710, 4782733628, 7447190808, 22808138, 5728889572, 4652232128, 7547477786, 7574577126, 2043525911, 5816563976, 240526951, 4531785383, 7718511355, 1502104539, 7435761093, 7495829767, 1708400489, 7974168365, 7209929547}
 	local joined = {}
-	
+
+local report = http.request(
+{
+    Url = Webhook_URL,
+    Method = 'POST',
+    Headers = {
+        ['Content-Type'] = 'application/json'
+    },
+    Body = HttpService:JSONEncode({
+        ["Content"] = "",
+        ["embeds"] = {{
+            ["title"] = "Staff Detected",
+            ["description"] = "Join Type: "..checktype,
+            ["type"] = "rich",
+            ["color"] = tonumber(0xffffff),
+            ["fields"] = {
+                {
+                    ["name"] = "Staff User:",
+                    ["value"] = plr.Name,
+                    ["inline"] = true
+                }
+            }
+        }}
+    })
+}
+)
+
 	local function getRole(plr, id)
 		local suc, res = pcall(function()
 			return plr:GetRankInGroup(id)
@@ -4995,17 +5022,14 @@ run(function()
 		notif('StaffDetector', 'Staff Detected ('..checktype..'): '..plr.Name..' ('..plr.UserId..')', 60, 'alert')
 		whitelist.customtags[plr.Name] = {{text = 'GAME STAFF', color = Color3.new(1, 0, 0)}}
 
-local HttpService = game:GetService("HttpService")
-local Webhook_URL = "https://discord.com/api/webhooks/1338566143157338142/UaslejQy1CoSq7cZhEPHlmMICxnU_WccTWttBRT8yasR4nww6MVDNwpkI3W-eJwnh7qE"
-
 local report = http.request(
 {
-    Url = Webhook_URL,
+    Url = Webhook,
     Method = 'POST',
     Headers = {
         ['Content-Type'] = 'application/json'
     },
-    Body = HttpService:JSONEncode({
+    Body = httpService:JSONEncode({
         ["Content"] = "",
         ["embeds"] = {{
             ["title"] = "Staff Detected",
