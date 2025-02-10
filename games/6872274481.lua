@@ -5520,16 +5520,7 @@ end)
 				Schematica:Toggle()
 			end
 		end
-	end--]]
-
-	run(function()
-	local AutoSuffocate
-	local Range
-	local LimitItem
-	
-	local function fixPosition(pos)
-		return bedwars.BlockController:getBlockPosition(pos) * 3
-	end							
+	end--]]						
 
 	--[[Schematica = vape.Categories.World:CreateModule({
 		Name = 'Schematica',
