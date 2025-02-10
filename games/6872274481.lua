@@ -8383,7 +8383,6 @@ AntiHit = vape.Categories.Blatant:CreateModule({
 				if (not vape.Modules.Fly.Enabled) and (not vape.Modules.InfiniteFly.Enabled) then
 								for i, v in pairs(game:GetService("Players"):GetChildren()) do
 									if v.Team ~= lplr.Team and IsAlive(v) and IsAlive(lplr) then
-										if v  ~= lplr then
 											local TargetDistance = lplr:DistanceFromCharacter(v.Character:FindFirstChild("HumanoidRootPart").CFrame.p)
 											if TargetDistance < 25 then
 												if not lplr.Character:WaitForChild("HumanoidRootPart"):FindFirstChildOfClass("BodyVelocity") then
