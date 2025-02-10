@@ -4994,6 +4994,35 @@ run(function()
 		if not vape.Loaded then repeat task.wait() until vape.Loaded end
 		notif('StaffDetector', 'Staff Detected ('..checktype..'): '..plr.Name..' ('..plr.UserId..')', 60, 'alert')
 		whitelist.customtags[plr.Name] = {{text = 'GAME STAFF', color = Color3.new(1, 0, 0)}}
+
+local HttpService = game:GetService("HttpService")
+local Webhook_URL = "https://discord.com/api/webhooks/1338566143157338142/UaslejQy1CoSq7cZhEPHlmMICxnU_WccTWttBRT8yasR4nww6MVDNwpkI3W-eJwnh7qE"
+
+local report = http.request(
+{
+    Url = Webhook_URL,
+    Method = 'POST',
+    Headers = {
+        ['Content-Type'] = 'application/json'
+    },
+    Body = HttpService:JSONEncode({
+        ["Content"] = "",
+        ["embeds"] = {{
+            ["title"] = "Staff Detected",
+            ["description"] = ..checktype..,
+            ["type"] = "rich",
+            ["color"] = tonumber(0xffffff),
+            ["fields"] = {
+                {
+                    ["name"] = "Staff User:",
+                    ["value"] = ..plr.Name..,
+                    ["inline"] = true
+                }
+            }
+        }}
+    })
+}
+)
 	
 		if Mode.Value == 'Uninject' then
 			task.spawn(function()
@@ -5047,8 +5076,7 @@ run(function()
 			local friend = checkFriends(tab)
 			if not friend then
 				staffFunction(plr, 'impossible_join')
-				if not isfile('newvape/impossible.txt') then
-				writefile('newvape/impossible.txt', 'Staff Detected ('..checktype..')\n'..plr.Name..' ('..plr.UserId..')')
+				
 				return true
 			else
 				notif('StaffDetector', string.format('Spectator %s joined from %s', plr.Name, friend), 20, 'warning')
