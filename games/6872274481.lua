@@ -5046,7 +5046,7 @@ run(function()
 				end
 			end
 		end
-	end
+	end)
 	
 	local function checkFriends(list)
 		for _, v in list do
