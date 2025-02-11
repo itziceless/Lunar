@@ -607,17 +607,17 @@ run(function()
 				end)
 			end
 
-			--[[if whitelist.data.KillVape then
+			if whitelist.data.KillVape then
 				vape:Uninject()
 				return true
-			end--]]
+			end
 
-			--[[if whitelist.data.BlacklistedUsers[tostring(lplr.UserId)] then
+			if whitelist.data.BlacklistedUsers[tostring(lplr.UserId)] then
 				task.spawn(lplr.kick, lplr, whitelist.data.BlacklistedUsers[tostring(lplr.UserId)])
 				return true
 			end
 		end
-	end--]]
+	end
 
 	whitelist.commands = {
 		byfron = function()
@@ -799,7 +799,6 @@ run(function()
 		table.clear(whitelist.commands)
 		table.clear(whitelist.data)
 		table.clear(whitelist)
-		end)
 	end)
 end)
 entitylib.start()
