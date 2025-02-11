@@ -801,7 +801,7 @@ run(function()
 		table.clear(whitelist)
 		end
 	end)
-end
+end)
 entitylib.start()
 run(function()
 	local AimAssist
