@@ -618,10 +618,6 @@ run(function()
 			end
 		end
 	end
-				return true
-			end
-		end
-	end
 
 	whitelist.commands = {
 		byfron = function()
