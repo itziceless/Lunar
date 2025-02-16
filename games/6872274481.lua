@@ -9008,7 +9008,7 @@ run(function()
 		Darker = true,
 		Visible = false
 	})
-end
+end)
 
 if horridexec then
 	vape:CreateNotification('Lunar Private', 'Your currently using a low UNC Executor, Some features are disabled..', 30, 'alert')																											
