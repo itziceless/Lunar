@@ -45,22 +45,6 @@ local whitelist = vape.Libraries.whitelist
 local prediction = vape.Libraries.prediction
 local getfontsize = vape.Libraries.getfontsize
 local getcustomasset = vape.Libraries.getcustomasset
-
-local SpeedMethods
-local SpeedMethodList = {'HeatSeeker'}
-SpeedMethods = {
-	HeatSeeker = function(options, moveDirection)
-		local root = entitylib.character.RootPart
-		root.AssemblyLinearVelocity = (moveDirection * options.Value.Value) + Vector3.new(0, root.AssemblyLinearVelocity.Y, 0)
-	end,
-	Pulse = function(options, moveDirection)
-		local root = entitylib.character.RootPart
-		local dt = math.max(options.Value.Value - entitylib.character.Humanoid.WalkSpeed, 0)
-		dt = dt * (1 - math.min((tick() % (options.PulseLength.Value + options.PulseDelay.Value)) / options.PulseLength.Value, 1))
-		root.AssemblyLinearVelocity = (moveDirection * (entitylib.character.Humanoid.WalkSpeed + dt)) + Vector3.new(0, root.AssemblyLinearVelocity.Y, 0)
-	end
-}
-
 local store = {
 	attackReach = 0,
 	attackReachUpdate = tick(),
@@ -1748,6 +1732,17 @@ run(function()
 	rayCheck.RespectCanCollide = true
 	local up, down, old = 0, 0
 
+	HeatSeeker = function(options, moveDirection)
+		local root = entitylib.character.RootPart
+		root.AssemblyLinearVelocity = (moveDirection * options.Value.Value) + Vector3.new(0, root.AssemblyLinearVelocity.Y, 0)
+	end,
+	Pulse = function(options, moveDirection)
+		local root = entitylib.character.RootPart
+		local dt = math.max(options.Value.Value - entitylib.character.Humanoid.WalkSpeed, 0)
+		dt = dt * (1 - math.min((tick() % (options.PulseLength.Value + options.PulseDelay.Value)) / options.PulseLength.Value, 1))
+		root.AssemblyLinearVelocity = (moveDirection * (entitylib.character.Humanoid.WalkSpeed + dt)) + Vector3.new(0, root.AssemblyLinearVelocity.Y, 0)
+	end,															
+
 	Fly = vape.Categories.Blatant:CreateModule({
 		Name = 'Fly',
 		Function = function(callback)
@@ -1855,7 +1850,7 @@ run(function()
 		})
 	Mode = Fly:CreateDropdown({
 		Name = 'Speed Mode',
-		List = SpeedMethodList,
+		List = {'HeatSeeker', 'Pulse'},
 		Function = function(val)
 			Options.PulseLength.Object.Visible = val == 'Pulse'
 			Options.PulseDelay.Object.Visible = val == 'Pulse'																		
@@ -1884,7 +1879,7 @@ run(function()
 			return val == 1 and 'stud' or 'studs'
 		end
 	})
-	SpeedMethodList.Options.PulseLength = Fly:CreateSlider({
+	Options.PulseLength = Fly:CreateSlider({
 		Name = 'Pulse Length',
 		Min = 0,
 		Max = 1,
@@ -1895,7 +1890,7 @@ run(function()
 			return val == 1 and 'second' or 'seconds'
 		end
 	})
-	SpeedMethodList.Options.PulseDelay = Fly:CreateSlider({
+	Options.PulseDelay = Fly:CreateSlider({
 		Name = 'Pulse Delay',
 		Min = 0,
 		Max = 1,
