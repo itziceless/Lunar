@@ -2672,8 +2672,7 @@ run(function()
 										}
 									})
 								end,
-								Tooltip = 'fixes hits cause yes'																												
-							end																													
+								Tooltip = 'fixes hits cause yes'																																																									
 						})																							
 run(function()
 	local Value
