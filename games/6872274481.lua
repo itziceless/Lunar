@@ -8925,7 +8925,7 @@ run(function()
 			Name = 'Speed',
 			Min = 1,
 			Max = 150,
-			Default = 27,
+			Default = 25,
 			Suffix = function(val)
 				return val == 1 and 'stud' or 'studs'
 			end
