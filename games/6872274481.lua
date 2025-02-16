@@ -9009,7 +9009,7 @@ run(function()
 		Visible = false
 	})
 		end
-	end)
+	end
 end)
 
 if horridexec then
