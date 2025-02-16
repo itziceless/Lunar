@@ -8404,7 +8404,7 @@ for name in SpeedMethods do
 	end
 end
 								
-local Fly
+local PulseFly
 run(function()
 	local Options = {TPTiming = tick()}
 	local Mode
