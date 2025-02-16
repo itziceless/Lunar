@@ -46,6 +46,21 @@ local prediction = vape.Libraries.prediction
 local getfontsize = vape.Libraries.getfontsize
 local getcustomasset = vape.Libraries.getcustomasset
 
+local SpeedMethods
+local SpeedMethodList = {'HeatSeeker'}
+SpeedMethods = {
+	HeatSeeker = function(options, moveDirection)
+		local root = entitylib.character.RootPart
+		root.AssemblyLinearVelocity = (moveDirection * options.Value.Value) + Vector3.new(0, root.AssemblyLinearVelocity.Y, 0)
+	end,
+	Pulse = function(options, moveDirection)
+		local root = entitylib.character.RootPart
+		local dt = math.max(options.Value.Value - entitylib.character.Humanoid.WalkSpeed, 0)
+		dt = dt * (1 - math.min((tick() % (options.PulseLength.Value + options.PulseDelay.Value)) / options.PulseLength.Value, 1))
+		root.AssemblyLinearVelocity = (moveDirection * (entitylib.character.Humanoid.WalkSpeed + dt)) + Vector3.new(0, root.AssemblyLinearVelocity.Y, 0)
+	end
+}
+
 local store = {
 	attackReach = 0,
 	attackReachUpdate = tick(),
