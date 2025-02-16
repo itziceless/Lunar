@@ -2661,12 +2661,12 @@ run(function()
         end
     })
     HitFixUpdateRate = Killaura:CreateSlider({
-        Name = 'Update rate',
-        Min = 1,
-        Max = 120,
-        Default = 60,
-        Suffix = 'hz'
-    })
+		Name = 'Update rate',
+		Min = 1,
+		Max = 120,
+		Default = 60,
+		Suffix = 'hz'
+	})
 end)																															
 run(function()
 	local Value
