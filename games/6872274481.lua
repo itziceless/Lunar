@@ -9008,6 +9008,7 @@ run(function()
 		Darker = true,
 		Visible = false
 	})
+		end
 	end)
 end)
 
