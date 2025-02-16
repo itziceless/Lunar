@@ -4500,10 +4500,10 @@ run(function()
 			if callback then
 				AutoToxic:Clean(vapeEvents.BedwarsBedBreak.Event:Connect(function(bedTable)
 					if Toggles.BedDestroyed.Enabled and bedTable.brokenBedTeam.id == lplr:GetAttribute('Team') then
-						sendMessage('BedDestroyed', (bedTable.player.DisplayName or bedTable.player.Name), 'how dare you >:( | <obj>')
+						sendMessage('BedDestroyed', (bedTable.player.DisplayName or bedTable.player.Name), 'i dont need a bed Lunar is my bed | <obj>')
 					elseif Toggles.Bed.Enabled and bedTable.player.UserId == lplr.UserId then
 						local team = bedwars.QueueMeta[store.queueType].teams[tonumber(bedTable.brokenBedTeam.id)]
-						sendMessage('Bed', team and team.displayName:lower() or 'white', 'nice bed lul | <obj>')
+						sendMessage('Bed', team and team.displayName:lower() or 'white', 'Lunar stole your bed just like your mom | <obj>')
 					end
 				end))
 				AutoToxic:Clean(vapeEvents.EntityDeathEvent.Event:Connect(function(deathTable)
@@ -4514,10 +4514,10 @@ run(function()
 						if killed == lplr then
 							if (not dead) and killer ~= lplr and Toggles.Death.Enabled then
 								dead = true
-								sendMessage('Death', (killer.DisplayName or killer.Name), 'my gaming chair subscription expired :( | <obj>')
+								sendMessage('Death', (killer.DisplayName or killer.Name), 'I was just admiring how good Lunar client is | <obj>')
 							end
 						elseif killer == lplr and Toggles.Kill.Enabled then
-							sendMessage('Kill', (killed.DisplayName or killed.Name), 'vxp on top | <obj>')
+							sendMessage('Kill', (killed.DisplayName or killed.Name), 'Lunar on top | <obj>')
 						end
 					end
 				end))
@@ -5129,12 +5129,12 @@ run(function()
 	end)
 end)
 	
-run(function()
+--[[run(function()
 	TrapDisabler = vape.Categories.Utility:CreateModule({
 		Name = 'TrapDisabler',
 		Tooltip = 'Disables Snap Traps'
 	})
-end)
+end)--]]
 
 run(function()
 	local AutoSuffocate
