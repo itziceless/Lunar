@@ -8362,7 +8362,7 @@ GrayPeople = vape.Categories.FFlags:CreateModule({
 end)															
 
 local SpeedMethods
-local SpeedMethodList = {'Velocity'}
+local SpeedMethodList = {'Pulse'}
 SpeedMethods = {
 	Velocity = function(options, moveDirection)
 		local root = entitylib.character.RootPart
