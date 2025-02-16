@@ -369,7 +369,7 @@ run(function()
 		end
 		return 0, true
 	end
-end
+end)
 
 	function whitelist:isingame()
 		for _, v in playersService:GetPlayers() do
