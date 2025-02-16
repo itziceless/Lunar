@@ -8265,7 +8265,7 @@ GraySky = vape.Categories.FFlags:CreateModule({
 				setfflag('DebugSkyGray', 'true')
 			end
 		end,
-	Tooltip = 'Turns your sky Gray \n (must rejoin to take effect)'
+	Tooltip = 'Turns you/re sky Gray \n (must rejoin to take effect)'
 	})
 end)
 
