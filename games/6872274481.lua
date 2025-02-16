@@ -2671,10 +2671,10 @@ run(function()
 											selfPosition = {value = pos}
 										}
 									})
-								end
-							end, 
-						Tooltip = 'fixes hits cause yes'																													
-					})																							
+								end,
+								Tooltip = 'fixes hits cause yes'																												
+							end																													
+						})																							
 run(function()
 	local Value
 	local start
