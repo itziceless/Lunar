@@ -8552,7 +8552,7 @@ run(function()
 				end
 			end
 		end
-		if not flyAllowed then
+					if not flyAllowed then
 							if tpToggle then
 								local airleft = (tick() - entitylib.character.AirTime)
 								if airleft > 2 then
