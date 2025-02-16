@@ -2671,7 +2671,8 @@ run(function()
 											selfPosition = {value = pos}
 										}
 									})
-								end																																																									
+								end
+							end																																																									
 						end
 					})																														
 run(function()
