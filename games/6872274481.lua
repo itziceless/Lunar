@@ -8484,8 +8484,8 @@ run(function()
 		end
 	}
 
-	Fly = vape.Categories.Blatant:CreateModule({
-		Name = 'Fly',
+	PulseFly = vape.Categories.Blatant:CreateModule({
+		Name = 'PulseFly',
 		Function = function(callback)
 			if Platform then
 				Platform.Parent = callback and gameCamera or nil
@@ -8553,7 +8553,7 @@ run(function()
 		end,
 		Tooltip = 'Makes you go zoom.'
 	})
-	Mode = Fly:CreateDropdown({
+	Mode = PulseFly:CreateDropdown({
 		Name = 'Speed Mode',
 		List = SpeedMethodList,
 		Function = function(val)
@@ -8568,7 +8568,7 @@ run(function()
 		end,
 		Tooltip = 'Velocity - Uses smooth physics based movement\nCFrame - Directly adjusts the position of the root\nTP - Large teleports within intervals\nPulse - Controllable bursts of speed\nWalkSpeed - The classic mode of speed, usually detected on most games.'
 	})
-	FloatMode = Fly:CreateDropdown({
+	FloatMode = PulseFly:CreateDropdown({
 		Name = 'Float Mode',
 		List = {'Velocity', 'CFrame', 'Bounce', 'Floor', 'Jump', 'TP'},
 		Function = function(val)
@@ -8599,21 +8599,21 @@ run(function()
 			table.insert(states, v.Name)
 		end
 	end
-	State = Fly:CreateDropdown({
+	State = PulseFly:CreateDropdown({
 		Name = 'Humanoid State',
 		List = states
 	})
-	MoveMethod = Fly:CreateDropdown({
+	MoveMethod = PulseFly:CreateDropdown({
 		Name = 'Move Mode',
 		List = {'MoveDirection', 'Direct'},
 		Tooltip = 'MoveDirection - Uses the games input vector for movement\nDirect - Directly calculate our own input vector'
 	})
-	Keys = Fly:CreateDropdown({
+	Keys = PulseFly:CreateDropdown({
 		Name = 'Keys',
 		List = {'Space/LeftControl', 'Space/LeftShift', 'E/Q', 'Space/Q', 'ButtonA/ButtonL2'},
 		Tooltip = 'The key combination for going up & down'
 	})
-	Options.Value = Fly:CreateSlider({
+	Options.Value = PulseFly:CreateSlider({
 		Name = 'Speed',
 		Min = 1,
 		Max = 150,
@@ -8622,7 +8622,7 @@ run(function()
 			return val == 1 and 'stud' or 'studs'
 		end
 	})
-	VerticalValue = Fly:CreateSlider({
+	VerticalValue = PulseFly:CreateSlider({
 		Name = 'Vertical Speed',
 		Min = 1,
 		Max = 150,
@@ -8631,7 +8631,7 @@ run(function()
 			return val == 1 and 'stud' or 'studs'
 		end
 	})
-	Options.TPFrequency = Fly:CreateSlider({
+	Options.TPFrequency = PulseFly:CreateSlider({
 		Name = 'TP Frequency',
 		Min = 0,
 		Max = 1,
@@ -8642,7 +8642,7 @@ run(function()
 			return val == 1 and 'second' or 'seconds'
 		end
 	})
-	Options.PulseLength = Fly:CreateSlider({
+	Options.PulseLength = PulseFly:CreateSlider({
 		Name = 'Pulse Length',
 		Min = 0,
 		Max = 1,
@@ -8653,7 +8653,7 @@ run(function()
 			return val == 1 and 'second' or 'seconds'
 		end
 	})
-	Options.PulseDelay = Fly:CreateSlider({
+	Options.PulseDelay = PulseFly:CreateSlider({
 		Name = 'Pulse Delay',
 		Min = 0,
 		Max = 1,
@@ -8664,7 +8664,7 @@ run(function()
 			return val == 1 and 'second' or 'seconds'
 		end
 	})
-	BounceLength = Fly:CreateSlider({
+	BounceLength = PulseFly:CreateSlider({
 		Name = 'Bounce Length',
 		Min = 0,
 		Max = 30,
@@ -8674,7 +8674,7 @@ run(function()
 			return val == 1 and 'stud' or 'studs'
 		end
 	})
-	BounceDelay = Fly:CreateSlider({
+	BounceDelay = PulseFly:CreateSlider({
 		Name = 'Bounce Delay',
 		Min = 0,
 		Max = 1,
@@ -8685,7 +8685,7 @@ run(function()
 			return val == 1 and 'second' or 'seconds'
 		end
 	})
-	FloatTPGround = Fly:CreateSlider({
+	FloatTPGround = PulseFly:CreateSlider({
 		Name = 'Ground',
 		Min = 0,
 		Max = 1,
@@ -8697,7 +8697,7 @@ run(function()
 			return val == 1 and 'second' or 'seconds'
 		end
 	})
-	FloatTPAir = Fly:CreateSlider({
+	FloatTPAir = PulseFly:CreateSlider({
 		Name = 'Air',
 		Min = 0,
 		Max = 5,
@@ -8709,14 +8709,14 @@ run(function()
 			return val == 1 and 'second' or 'seconds'
 		end
 	})
-	WallCheck = Fly:CreateToggle({
+	WallCheck = PulseFly:CreateToggle({
 		Name = 'Wall Check',
 		Default = true,
 		Darker = true,
 		Visible = false
 	})
 	Options.WallCheck = WallCheck
-	PlatformStanding = Fly:CreateToggle({
+	PlatformStanding = PulseFly:CreateToggle({
 		Name = 'PlatformStand',
 		Function = function(callback)
 			if Fly.Enabled then
@@ -8725,7 +8725,7 @@ run(function()
 		end,
 		Tooltip = 'Forces the character to look infront of the camera'
 	})
-	CustomProperties = Fly:CreateToggle({
+	CustomProperties = PulseFly:CreateToggle({
 		Name = 'Custom Properties',
 		Function = function()
 			if Fly.Enabled then
