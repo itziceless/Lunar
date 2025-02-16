@@ -8409,6 +8409,7 @@ run(function()
 	local Options = {TPTiming = tick()}
 	local Mode
 	local FloatMode
+	local FlyAnywayProgressBarFrame
 	local State
 	local MoveMethod
 	local Keys
@@ -8712,6 +8713,44 @@ run(function()
 			return val == 1 and 'second' or 'seconds'
 		end
 	})
+	FlyAnywayProgressBar = Fly.CreateToggle({
+		Name = "Progress Bar",
+		Function = function(callback)
+			if callback then
+				FlyAnywayProgressBarFrame = Instance.new("Frame")
+				FlyAnywayProgressBarFrame.AnchorPoint = Vector2.new(0.5, 0)
+				FlyAnywayProgressBarFrame.Position = UDim2.new(0.5, 0, 1, -200)
+				FlyAnywayProgressBarFrame.Size = UDim2.new(0.2, 0, 0, 20)
+				FlyAnywayProgressBarFrame.BackgroundTransparency = 0.5
+				FlyAnywayProgressBarFrame.BorderSizePixel = 0
+				FlyAnywayProgressBarFrame.BackgroundColor3 = Color3.new(0, 0, 0)
+				FlyAnywayProgressBarFrame.Visible = Fly.Enabled
+				FlyAnywayProgressBarFrame.Parent = GuiLibrary.MainGui
+				local FlyAnywayProgressBarFrame2 = FlyAnywayProgressBarFrame:Clone()
+				FlyAnywayProgressBarFrame2.AnchorPoint = Vector2.new(0, 0)
+				FlyAnywayProgressBarFrame2.Position = UDim2.new(0, 0, 0, 0)
+				FlyAnywayProgressBarFrame2.Size = UDim2.new(1, 0, 0, 20)
+				FlyAnywayProgressBarFrame2.BackgroundTransparency = 0
+				FlyAnywayProgressBarFrame2.Visible = true
+				FlyAnywayProgressBarFrame2.Parent = FlyAnywayProgressBarFrame
+				local FlyAnywayProgressBartext = Instance.new("TextLabel")
+				FlyAnywayProgressBartext.Text = "2s"
+				FlyAnywayProgressBartext.Font = Enum.Font.Gotham
+				FlyAnywayProgressBartext.TextStrokeTransparency = 0
+				FlyAnywayProgressBartext.TextColor3 =  Color3.new(0.9, 0.9, 0.9)
+				FlyAnywayProgressBartext.TextSize = 20
+				FlyAnywayProgressBartext.Size = UDim2.new(1, 0, 1, 0)
+				FlyAnywayProgressBartext.BackgroundTransparency = 1
+				FlyAnywayProgressBartext.Position = UDim2.new(0, 0, -1, 0)
+				FlyAnywayProgressBartext.Parent = FlyAnywayProgressBarFrame
+			else
+				if FlyAnywayProgressBarFrame then FlyAnywayProgressBarFrame:Destroy() FlyAnywayProgressBarFrame = nil end
+			end
+		end,
+		HoverText = "show amount of Fly time",
+		Default = true
+	})
+
 	WallCheck = Fly:CreateToggle({
 		Name = 'Wall Check',
 		Default = true,
