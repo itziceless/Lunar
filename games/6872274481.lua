@@ -2647,26 +2647,27 @@ run(function()
 end)
 
 run(function()
-	local HitFixUpdateRate																														
-	HitFix = vape.Categories.Blatant:CreateModule({
-		Name = 'HitFix',
-		Function = function(callback)																														
-			if callback then																																
-				task.wait(#attacked > 0 and #attacked * 0.02 or 1 / HitFixUpdateRate.Value)
-				until not HitFix.Enabled
-						else
-					end																														
-				end
-			end																											
-		})
-		HitFixUpdateRate = Killaura:CreateSlider({
-		Name = 'Update rate',
-		Min = 1,
-		Max = 120,
-		Default = 60,
-		Suffix = 'hz'
-	})																													
-	end)																															
+    local HitFixUpdateRate
+																															
+    HitFix = vape.Categories.Blatant:CreateModule({
+        Name = 'HitFix',
+        Function = function(callback)
+            if callback then
+                while HitFix.Enabled do
+                    local waitTime = #attacked > 0 and #attacked * 0.02 or 1 / HitFixUpdateRate.Value
+                    task.wait(waitTime)
+                end
+            end
+        end
+    })
+    HitFixUpdateRate = Killaura:CreateSlider({
+        Name = 'Update rate',
+        Min = 1,
+        Max = 120,
+        Default = 60,
+        Suffix = 'hz'
+    })
+end)																															
 run(function()
 	local Value
 	local start
