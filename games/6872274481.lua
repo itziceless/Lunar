@@ -2671,8 +2671,7 @@ run(function()
 											selfPosition = {value = pos}
 										}
 									})
-								end,
-								Tooltip = 'fixes hits cause yes'																																																									
+								end																																																									
 						})																							
 run(function()
 	local Value
