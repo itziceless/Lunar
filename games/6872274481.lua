@@ -8645,8 +8645,8 @@ run(function()
 	Options.PulseLength = Fly:CreateSlider({
 		Name = 'Pulse Length',
 		Min = 0,
-		Max = 1,
-		Decimal = 100,
+		Max = 5,
+		Decimal = 10,
 		Darker = true,
 		Visible = false,
 		Suffix = function(val)
