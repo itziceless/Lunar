@@ -800,7 +800,7 @@ run(function()
 		table.clear(whitelist.data)
 		table.clear(whitelist)
 	end)
-end)
+end,
 entitylib.start()
 shared.vapeentity = entitylib	
 run(function()
