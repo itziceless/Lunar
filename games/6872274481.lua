@@ -9007,8 +9007,8 @@ run(function()
 		Default = 30,
 		Darker = true,
 		Visible = false
-		})
-	end
+	})
+	end)
 end)
 
 if horridexec then
