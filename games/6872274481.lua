@@ -1855,7 +1855,7 @@ run(function()
 		})
 	Mode = Fly:CreateDropdown({
 		Name = 'Speed Mode',
-		List = {'HeatSeeker', 'Pulse'},
+		List = SpeedMethodList,
 		Function = function(val)
 			Options.PulseLength.Object.Visible = val == 'Pulse'
 			Options.PulseDelay.Object.Visible = val == 'Pulse'																		
