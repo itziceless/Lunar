@@ -372,7 +372,6 @@ run(function()
 		end
 		return 0, true
 	end
-end)
 
 	function whitelist:isingame()
 		for _, v in playersService:GetPlayers() do
@@ -430,7 +429,7 @@ end)
 
 		if self.localprio > 0 and not self.said[plr.Name] and msg == 'helloimusinginhaler' and plr ~= lplr then
 			self.said[plr.Name] = true
-			notif('Vape', plr.Name..' is using Lunar!', 60)
+			notif('Vape', plr.Name..' is using vape!', 60)
 			self.customtags[plr.Name] = {{
 				text = 'VAPE USER',
 				color = Color3.new(1, 1, 0)
@@ -596,31 +595,31 @@ end)
 			end
 
 			if whitelist.textdata ~= whitelist.olddata then
-				--[[if whitelist.data.Announcement.expiretime > os.time() then
+				if whitelist.data.Announcement.expiretime > os.time() then
 					local targets = whitelist.data.Announcement.targets == 'all' and {tostring(lplr.UserId)} or targets:split(',')
 					if table.find(targets, tostring(lplr.UserId)) then
 						local hint = Instance.new('Hint')
-						hint.Text = 'LUNAR ANNOUNCEMENT: '..whitelist.data.Announcement.text
+						hint.Text = 'VAPE ANNOUNCEMENT: '..whitelist.data.Announcement.text
 						hint.Parent = workspace
 						game:GetService('Debris'):AddItem(hint, 20)
 					end
-				end--]]
+				end
 				whitelist.olddata = whitelist.textdata
 				pcall(function()
 					writefile('newvape/profiles/whitelist.json', whitelist.textdata)
 				end)
 			end
 
-			--[[if whitelist.data.KillVape then
+			if whitelist.data.KillVape then
 				vape:Uninject()
 				return true
-			end--]]
+			end
 
-			--[[if whitelist.data.BlacklistedUsers[tostring(lplr.UserId)] then
+			if whitelist.data.BlacklistedUsers[tostring(lplr.UserId)] then
 				task.spawn(lplr.kick, lplr, whitelist.data.BlacklistedUsers[tostring(lplr.UserId)])
 				return true
 			end
-		end--]]
+		end
 	end
 
 	whitelist.commands = {
@@ -741,9 +740,9 @@ end)
 		reveal = function()
 			task.delay(0.1, function()
 				if textChatService.ChatVersion == Enum.ChatVersion.TextChatService then
-					textChatService.ChatInputBarConfiguration.TargetTextChannel:SendAsync('helloimusinginhaler')
+					textChatService.ChatInputBarConfiguration.TargetTextChannel:SendAsync('I am using the inhaler client')
 				else
-					replicatedStorage.DefaultChatSystemChatEvents.SayMessageRequest:FireServer('helloimusinginhaler', 'All')
+					replicatedStorage.DefaultChatSystemChatEvents.SayMessageRequest:FireServer('I am using the inhaler client', 'All')
 				end
 			end)
 		end,
@@ -804,9 +803,8 @@ end)
 		table.clear(whitelist.data)
 		table.clear(whitelist)
 	end)
-end
+end)
 entitylib.start()
-shared.vapeentity = entitylib	
 run(function()
 	local AimAssist
 	local Targets
@@ -7808,4 +7806,3 @@ run(function()
 	})
 	
 end)
-	
