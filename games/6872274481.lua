@@ -2660,7 +2660,8 @@ run(function()
 				task.wait(#attacked > 0 and #attacked * 0.02 or 1 / UpdateRate.Value)
 				until not HitFix.Enabled
 					else
-						end																													
+							end
+						end																											
 					})
 				end)																															
 run(function()
