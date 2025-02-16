@@ -2647,18 +2647,19 @@ run(function()
 end)
 
 run(function()
-	local UpdateRate																														
+	local HitFixUpdateRate																														
 	HitFix = vape.Categories.Blatant:CreateModule({
 		Name = 'HitFix',
 		Function = function(callback)																														
 			if callback then																																
-				task.wait(#attacked > 0 and #attacked * 0.02 or 1 / UpdateRate.Value)
+				task.wait(#attacked > 0 and #attacked * 0.02 or 1 / HitFixUpdateRate.Value)
 				until not HitFix.Enabled
-					else
+						else
+					end																														
 				end
 			end																											
 		})
-		UpdateRate = Killaura:CreateSlider({
+		HitFixUpdateRate = Killaura:CreateSlider({
 		Name = 'Update rate',
 		Min = 1,
 		Max = 120,
