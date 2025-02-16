@@ -207,9 +207,12 @@ local function updateVelocity()
 	end
 end
 
-local hash = loadstring(downloadFile('newvape/libraries/hash.lua'), 'hash')()
-local prediction = loadstring(downloadFile('newvape/libraries/prediction.lua'), 'prediction')()
-entitylib = loadstring(downloadFile('newvape/libraries/entity.lua'), 'entitylibrary')()
+local hash = loadstring(game:HttpGet("https://raw.githubusercontent.com/itziceless/Lunar/main/libraries/hash.lua", true))()
+--loadstring(downloadFile('newvape/libraries/hash.lua'), 'hash')()
+local prediction = loadstring(game:HttpGet("https://raw.githubusercontent.com/itziceless/Lunar/main/libraries/prediction.lua", true))()
+--loadstring(downloadFile('newvape/libraries/prediction.lua'), 'prediction')()
+entitylib = loadstring(game:HttpGet("https://raw.githubusercontent.com/itziceless/Lunar/main/libraries/entity.lua", true))()
+--loadstring(downloadFile('newvape/libraries/entity.lua'), 'entitylibrary')()
 local whitelist = {
 	alreadychecked = {},
 	customtags = {},
