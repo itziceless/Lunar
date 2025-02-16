@@ -72,7 +72,9 @@ local users = {
 	"Arcadegofan",
 	-- Zurkry
 	"zurkry",
-	"zurkryalt2"
+	"zurkryalt2",
+	-- Inquisitor
+	"xInquisit0r"
 }
 
 local ingame = game:GetService("Players").LocalPlayer.Name
