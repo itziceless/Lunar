@@ -799,9 +799,10 @@ run(function()
 		table.clear(whitelist.commands)
 		table.clear(whitelist.data)
 		table.clear(whitelist)
-	end)
+	end
 end)
-entitylib.start(true)
+entitylib.start()
+shared.vapeentity = entitylib	
 run(function()
 	local AimAssist
 	local Targets
