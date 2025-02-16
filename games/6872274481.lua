@@ -2647,7 +2647,7 @@ run(function()
 end)
 
 run(function()
-	HitFix= vape.Categories.Blatant:CreateModule({
+	HitFix = vape.Categories.Blatant:CreateModule({
 		Name = 'HitFix',
 		Function = function(callback)																														
 			if callback then																										
@@ -2671,8 +2671,10 @@ run(function()
 											selfPosition = {value = pos}
 										}
 									})
-								end																																																									
-						})																							
+								end,																																																									
+							Tooltip = 'bedwars retarded :troll:'
+						end
+					})																														
 run(function()
 	local Value
 	local start
