@@ -2654,6 +2654,7 @@ run(function()
 			if callback then
 				if not started then
 					task.wait(1 / UpdateRate.Value)
+					end
 				end
 				until (not HitFix.Enabled)
 				end																																
