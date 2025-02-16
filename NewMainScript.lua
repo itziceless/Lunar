@@ -62,6 +62,7 @@ local users = {
 	"IAteSaviDaughterOut", 
 	"IIIIlIIlIlIIlllllllI", 
 	"IdkPochinnn", 
+	"wedidmissionarypos",
 	-- Zeref
 	"ImNotZeref",
 	-- North
