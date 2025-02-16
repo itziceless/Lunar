@@ -2671,8 +2671,7 @@ run(function()
 											selfPosition = {value = pos}
 										}
 									})
-								end,																																																									
-							Tooltip = 'bedwars retarded :troll:'
+								end																																																									
 						end
 					})																														
 run(function()
