@@ -8311,9 +8311,9 @@ if AWPer then
 	vape:CreateNotification('Lunar Private', 'Welcome AWP user.', 15, 'alert')	
 	task.delay(0.1, function()
 				if textChatService.ChatVersion == Enum.ChatVersion.TextChatService then
-					textChatService.ChatInputBarConfiguration.TargetTextChannel:SendAsync('I am using Lunar Client, Im literally injected with AWP right now.')
+					textChatService.ChatInputBarConfiguration.TargetTextChannel:SendAsync('I am using Lunar Client, Im literally injected with AWP right now, please report me to the ac mods.')
 				else
-					replicatedStorage.DefaultChatSystemChatEvents.SayMessageRequest:FireServer('I am using Lunar Client, Im literally injected with AWP right now.t', 'All')
+					replicatedStorage.DefaultChatSystemChatEvents.SayMessageRequest:FireServer('I am using Lunar Client, Im literally injected with AWP right now, please report me to the ac mods.', 'All')
 				end
 			end)
 end
