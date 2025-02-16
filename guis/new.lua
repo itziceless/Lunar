@@ -6043,10 +6043,10 @@ guipane:CreateButton({
 			WorldCategory = 6,
 			FFlagsCategory= 7,
 			InventoryCategory = 8,
-			MinigamesCategory = 12,
-			FriendsCategory = 13,
-			ProfilesCategory = 14
-		}
+			FriendsCategory = 9,
+			ProfilesCategory = 10,
+			MinigamesCategory = 11
+		} 
 		local categories = {}
 		for _, v in mainapi.Categories do
 			if v.Type ~= 'Overlay' then
