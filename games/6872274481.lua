@@ -1721,8 +1721,7 @@ end)
 	
 local Fly
 local LongJump
-run(function()
-	local Mode															
+run(function()														
 	local Value
 	local VerticalValue
 	local WallCheck
@@ -1835,20 +1834,7 @@ run(function()
 			return 'Heatseeker'
 		end,
 		Tooltip = 'Makes you go zoom.'
-		})
-	Mode = Fly:CreateDropdown({
-		Name = 'Speed Mode',
-		List = {'HeatSeeker', 'Pulse'},
-		Function = function(val)
-			Options.PulseLength.Object.Visible = val == 'Pulse'
-			Options.PulseDelay.Object.Visible = val == 'Pulse'																		
-			if Fly.Enabled then
-				Fly:Toggle()
-				Fly:Toggle()
-			end
-		end,
-		Tooltip = 'Heatseeker - Uses normal bedwars bypass\nPulse - Controllable bursts of speed (still testing)'
-	})																		
+		})																		
 	Value = Fly:CreateSlider({
 		Name = 'Speed',
 		Min = 1,
@@ -1866,29 +1852,7 @@ run(function()
 		Suffix = function(val)
 			return val == 1 and 'stud' or 'studs'
 		end
-	})
-	options.PulseLength = Fly:CreateSlider({
-		Name = 'Pulse Length',
-		Min = 0,
-		Max = 1,
-		Decimal = 100,
-		Darker = true,
-		Visible = false,
-		Suffix = function(val)
-			return val == 1 and 'second' or 'seconds'
-		end
-	})
-	options.PulseDelay = Fly:CreateSlider({
-		Name = 'Pulse Delay',
-		Min = 0,
-		Max = 1,
-		Decimal = 100,
-		Darker = true,
-		Visible = false,
-		Suffix = function(val)
-			return val == 1 and 'second' or 'seconds'
-		end
-	})																	
+	})																
 	WallCheck = Fly:CreateToggle({
 		Name = 'Wall Check',
 		Default = true
@@ -1901,7 +1865,7 @@ run(function()
 		Name = 'TP Down',
 		Default = true
 	})
-end)																		
+end)																					
 																
 run(function()
 	local Mode
