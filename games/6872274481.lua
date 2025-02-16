@@ -2645,7 +2645,37 @@ run(function()
 		Tooltip = 'Plays animation with hit attempt'
 	})
 end)
-																												
+
+run(function()
+	HitFix= vape.Categories.Blatant:CreateModule({
+		Name = 'HitFix',
+		Function = function(callback)																														
+			if callback then																										
+				local actualRoot = v.Character.PrimaryPart
+								if actualRoot then
+									local dir = CFrame.lookAt(selfpos, actualRoot.Position).LookVector
+									local pos = selfpos + dir * math.max(delta.Magnitude - 14.399, 0)
+									bedwars.SwordController.lastAttack = workspace:GetServerTimeNow()
+									store.attackReach = (delta.Magnitude * 100) // 1 / 100
+									store.attackReachUpdate = tick() + 1
+									AttackRemote:FireServer({
+										weapon = sword.tool,
+										chargedAttack = {chargeRatio = meta.sword.chargedAttack and not meta.sword.chargedAttack.disableOnGrounded and 0.999 or 0},
+										entityInstance = v.Character,
+										validate = {
+											raycast = {
+												cameraPosition = {value = pos},
+												cursorDirection = {value = dir}
+											},
+											targetPosition = {value = actualRoot.Position},
+											selfPosition = {value = pos}
+										}
+									})
+								end
+							end
+						end
+					end																															
+																													
 run(function()
 	local Value
 	local start
