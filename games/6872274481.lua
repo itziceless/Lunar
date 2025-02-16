@@ -2653,9 +2653,8 @@ run(function()
         Name = 'HitFix',
         Function = function(callback)
             if callback then
-                while HitFix.Enabled do
-                    local waitTime = #attacked > 0 and #attacked * 0.02 or 1 / HitFixUpdateRate.Value
-                    task.wait(waitTime)
+                    task.wait(#attacked > 0 and #attacked * 0.02 or 1 / UpdateRate.Value)
+				until not Killaura.Enabled
                 end
             end
         end
