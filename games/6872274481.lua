@@ -8599,11 +8599,25 @@ run(function()
 			table.insert(states, v.Name)
 		end
 	end
+	State = Fly:CreateDropdown({
+		Name = 'Humanoid State',
+		List = states
+	})
+	MoveMethod = Fly:CreateDropdown({
+		Name = 'Move Mode',
+		List = {'MoveDirection', 'Direct'},
+		Tooltip = 'MoveDirection - Uses the games input vector for movement\nDirect - Directly calculate our own input vector'
+	})
+	Keys = Fly:CreateDropdown({
+		Name = 'Keys',
+		List = {'Space/LeftControl', 'Space/LeftShift', 'E/Q', 'Space/Q', 'ButtonA/ButtonL2'},
+		Tooltip = 'The key combination for going up & down'
+	})
 	Options.Value = Fly:CreateSlider({
 		Name = 'Speed',
 		Min = 1,
 		Max = 150,
-		Default = 50,
+		Default = 25,
 		Suffix = function(val)
 			return val == 1 and 'stud' or 'studs'
 		end
@@ -8612,7 +8626,7 @@ run(function()
 		Name = 'Vertical Speed',
 		Min = 1,
 		Max = 150,
-		Default = 50,
+		Default = 100,
 		Suffix = function(val)
 			return val == 1 and 'stud' or 'studs'
 		end
@@ -8633,7 +8647,8 @@ run(function()
 		Min = 0,
 		Max = 5,
 		Decimal = 10,
-		Darker = true,
+		Default = 2.5,			
+		Darker = true,		
 		Visible = false,
 		Suffix = function(val)
 			return val == 1 and 'second' or 'seconds'
@@ -8643,6 +8658,7 @@ run(function()
 		Name = 'Pulse Delay',
 		Min = 0,
 		Max = 1,
+		Default = 0.5,			
 		Decimal = 100,
 		Darker = true,
 		Visible = false,
@@ -8702,6 +8718,15 @@ run(function()
 		Visible = false
 	})
 	Options.WallCheck = WallCheck
+	PlatformStanding = Fly:CreateToggle({
+		Name = 'PlatformStand',
+		Function = function(callback)
+			if Fly.Enabled then
+				entitylib.character.Humanoid.PlatformStand = callback
+			end
+		end,
+		Tooltip = 'Forces the character to look infront of the camera'
+	})
 	CustomProperties = Fly:CreateToggle({
 		Name = 'Custom Properties',
 		Function = function()
