@@ -6043,9 +6043,9 @@ guipane:CreateButton({
 			WorldCategory = 6,
 			FFlagsCategory= 7,
 			InventoryCategory = 8,
-			MinigamesCategory = 10,
-			FriendsCategory = 11,
-			ProfilesCategory = 12
+			MinigamesCategory = 12,
+			FriendsCategory = 13,
+			ProfilesCategory = 14
 		}
 		local categories = {}
 		for _, v in mainapi.Categories do
