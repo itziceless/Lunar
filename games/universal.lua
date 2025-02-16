@@ -607,10 +607,10 @@ run(function()
 				end)
 			end
 
-			if whitelist.data.KillVape then
+			--[[if whitelist.data.KillVape then
 				vape:Uninject()
 				return true
-			end
+			end--]]
 
 			if whitelist.data.BlacklistedUsers[tostring(lplr.UserId)] then
 				task.spawn(lplr.kick, lplr, whitelist.data.BlacklistedUsers[tostring(lplr.UserId)])
