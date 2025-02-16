@@ -803,7 +803,7 @@ run(function()
 		table.clear(whitelist.data)
 		table.clear(whitelist)
 	end)
-end)
+end
 entitylib.start()
 run(function()
 	local AimAssist
