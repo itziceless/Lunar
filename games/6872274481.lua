@@ -8412,6 +8412,7 @@ run(function()
 	local State
 	local MoveMethod
 	local Keys
+	local TP
 	local VerticalValue
 	local BounceLength
 	local BounceDelay
@@ -8547,7 +8548,34 @@ run(function()
 					entitylib.character.Humanoid.PlatformStand = false
 				end
 			end
-		end,
+		end
+		if not flyAllowed then
+							if tpToggle then
+								local airleft = (tick() - entitylib.character.AirTime)
+								if airleft > 2 then
+									if not oldy then
+										local ray = workspace:Raycast(root.Position, Vector3.new(0, -1000, 0), rayCheck)
+										if ray and TP.Enabled then
+											tpToggle = false
+											oldy = root.Position.Y
+											tpTick = tick() + 0.11
+											root.CFrame = CFrame.lookAlong(Vector3.new(root.Position.X, ray.Position.Y + entitylib.character.HipHeight, root.Position.Z), root.CFrame.LookVector)
+										end
+									end
+								end
+							else
+								if oldy then
+									if tpTick < tick() then
+										local newpos = Vector3.new(root.Position.X, oldy, root.Position.Z)
+										root.CFrame = CFrame.lookAlong(newpos, root.CFrame.LookVector)
+										tpToggle = true
+										oldy = nil
+									else
+										mass = 0
+									end
+								end
+							end
+						end,
 		ExtraText = function() 
 			return Mode.Value 
 		end,
@@ -8718,6 +8746,10 @@ run(function()
 		Visible = false
 	})
 	Options.WallCheck = WallCheck
+	TP = Fly:CreateToggle({
+		Name = 'TP Down',
+		Default = true
+	})
 	PlatformStanding = Fly:CreateToggle({
 		Name = 'PlatformStand',
 		Function = function(callback)
