@@ -1884,7 +1884,7 @@ run(function()
 			return val == 1 and 'stud' or 'studs'
 		end
 	})
-	Options.PulseLength = Fly:CreateSlider({
+	SpeedMethodList.Options.PulseLength = Fly:CreateSlider({
 		Name = 'Pulse Length',
 		Min = 0,
 		Max = 1,
@@ -1895,7 +1895,7 @@ run(function()
 			return val == 1 and 'second' or 'seconds'
 		end
 	})
-	Options.PulseDelay = Fly:CreateSlider({
+	SpeedMethodList.Options.PulseDelay = Fly:CreateSlider({
 		Name = 'Pulse Delay',
 		Min = 0,
 		Max = 1,
