@@ -2673,8 +2673,9 @@ run(function()
 									})
 								end
 							end
-						end)																													
-				})																														
+						end																													
+					})
+				end)																															
 run(function()
 	local Value
 	local start
