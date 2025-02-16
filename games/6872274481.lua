@@ -8299,3 +8299,7 @@ end
 if AWPer then																																																											
 	vape:CreateNotification('Lunar Private', 'Welcome AWP user.', 15, 'alert')												
 end
+
+if game:GetService("Players").LocalPlayer.Name = "th_eoiscominginbed" then
+	vape:CreateNotification('Lunar Private', 'Inquisitor, Join the VC.', 15, 'alert'
+end
