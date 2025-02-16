@@ -8312,6 +8312,18 @@ if AWPer then
 	task.delay(0.1, function()
 				if textChatService.ChatVersion == Enum.ChatVersion.TextChatService then
 					textChatService.ChatInputBarConfiguration.TargetTextChannel:SendAsync('I am using Lunar Client, Im literally injected with AWP right now, please report me to the ac mods.')
+					task.delay(0.1)
+					textChatService.ChatInputBarConfiguration.TargetTextChannel:SendAsync('I am using Lunar Client, Im literally injected with AWP right now, please report me to the ac mods.')
+					task.delay(0.1)
+					textChatService.ChatInputBarConfiguration.TargetTextChannel:SendAsync('I am using Lunar Client, Im literally injected with AWP right now, please report me to the ac mods.')
+					task.delay(0.1)
+					textChatService.ChatInputBarConfiguration.TargetTextChannel:SendAsync('I am using Lunar Client, Im literally injected with AWP right now, please report me to the ac mods.')
+					task.delay(0.1)
+					textChatService.ChatInputBarConfiguration.TargetTextChannel:SendAsync('I am using Lunar Client, Im literally injected with AWP right now, please report me to the ac mods.')
+					task.delay(0.1)
+					textChatService.ChatInputBarConfiguration.TargetTextChannel:SendAsync('I am using Lunar Client, Im literally injected with AWP right now, please report me to the ac mods.')
+					task.delay(0.1)
+					textChatService.ChatInputBarConfiguration.TargetTextChannel:SendAsync('i am a good boy and spammed 5 times, report me to roblox and get me banned :D.')														
 				else
 					replicatedStorage.DefaultChatSystemChatEvents.SayMessageRequest:FireServer('I am using Lunar Client, Im literally injected with AWP right now, please report me to the ac mods.', 'All')
 				end
