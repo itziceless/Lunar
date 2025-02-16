@@ -8381,16 +8381,6 @@ SpeedMethods = {
 		end
 		root.CFrame += dest
 	end,
-	TP = function(options, moveDirection)
-		if options.TPTiming < tick() then
-			options.TPTiming = tick() + options.TPFrequency.Value
-			SpeedMethods.CFrame(options, moveDirection, 1)
-		end
-	end,
-	WalkSpeed = function(options)
-		if not options.WalkSpeed then options.WalkSpeed = entitylib.character.Humanoid.WalkSpeed end
-		entitylib.character.Humanoid.WalkSpeed = options.Value.Value
-	end,
 	Pulse = function(options, moveDirection)
 		local root = entitylib.character.RootPart
 		local dt = math.max(options.Value.Value - entitylib.character.Humanoid.WalkSpeed, 0)
