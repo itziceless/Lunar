@@ -2647,32 +2647,19 @@ run(function()
 end)
 
 run(function()
+	local UpdateRate																														
 	HitFix = vape.Categories.Blatant:CreateModule({
 		Name = 'HitFix',
 		Function = function(callback)																														
-			if callback then																										
-				local actualRoot = v.Character.PrimaryPart
-								if actualRoot then
-									local dir = CFrame.lookAt(selfpos, actualRoot.Position).LookVector
-									local pos = selfpos + dir * math.max(delta.Magnitude - 14.399, 0)
-									bedwars.SwordController.lastAttack = workspace:GetServerTimeNow()
-									store.attackReach = (delta.Magnitude * 100) // 1 / 100
-									store.attackReachUpdate = tick() + 1
-									AttackRemote:FireServer({
-										weapon = sword.tool,
-										chargedAttack = {chargeRatio = meta.sword.chargedAttack and not meta.sword.chargedAttack.disableOnGrounded and 0.999 or 0},
-										entityInstance = v.Character,
-										validate = {
-											raycast = {
-												cameraPosition = {value = pos},
-												cursorDirection = {value = dir}
-											},
-											targetPosition = {value = actualRoot.Position},
-											selfPosition = {value = pos}
-										}
-									})
-								end
-							end
+			if callback then
+				if not started then
+					task.wait(1 / UpdateRate.Value)
+				end
+				until (not HitFix.Enabled)
+				end																																
+				task.wait(#attacked > 0 and #attacked * 0.02 or 1 / UpdateRate.Value)
+				until not HitFix.Enabled
+					else
 						end																													
 					})
 				end)																															
