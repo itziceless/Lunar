@@ -8599,20 +8599,6 @@ run(function()
 			table.insert(states, v.Name)
 		end
 	end
-	State = Fly:CreateDropdown({
-		Name = 'Humanoid State',
-		List = states
-	})
-	MoveMethod = Fly:CreateDropdown({
-		Name = 'Move Mode',
-		List = {'MoveDirection', 'Direct'},
-		Tooltip = 'MoveDirection - Uses the games input vector for movement\nDirect - Directly calculate our own input vector'
-	})
-	Keys = Fly:CreateDropdown({
-		Name = 'Keys',
-		List = {'Space/LeftControl', 'Space/LeftShift', 'E/Q', 'Space/Q', 'ButtonA/ButtonL2'},
-		Tooltip = 'The key combination for going up & down'
-	})
 	Options.Value = Fly:CreateSlider({
 		Name = 'Speed',
 		Min = 1,
@@ -8716,15 +8702,6 @@ run(function()
 		Visible = false
 	})
 	Options.WallCheck = WallCheck
-	PlatformStanding = Fly:CreateToggle({
-		Name = 'PlatformStand',
-		Function = function(callback)
-			if Fly.Enabled then
-				entitylib.character.Humanoid.PlatformStand = callback
-			end
-		end,
-		Tooltip = 'Forces the character to look infront of the camera'
-	})
 	CustomProperties = Fly:CreateToggle({
 		Name = 'Custom Properties',
 		Function = function()
