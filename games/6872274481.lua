@@ -8853,7 +8853,7 @@ run(function()
 			Min = 0,
 			Max = 1,
 			Decimal = 100,
-			Default = 0.5,
+			Default = 0.1,
 			Darker = true,
 			Visible = false,
 			Suffix = function(val)
