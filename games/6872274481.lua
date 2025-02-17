@@ -8808,7 +8808,7 @@ run(function()
 				Speed:Toggle()
 			end
 		end,
-		Tooltip = 'Velocity - Uses smooth physics based movement\nCFrame - Directly adjusts the position of the root\nTP - Large teleports within intervals\nPulse - Controllable bursts of speed\nWalkSpeed - The classic mode of speed, usually detected on most games.'
+		Tooltip = 'Velocity - Uses smooth physics based movement\nCFrame - Directly adjusts the position of the root\nPulse - Controllable bursts of speed.'
 	})
 	Options = {
 		MoveMethod = Speed:CreateDropdown({
