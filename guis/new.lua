@@ -5935,7 +5935,8 @@ mainapi.Blur = guipane:CreateToggle({
 guipane:CreateToggle({
 	Name = "Blatant Mode",
 	Default = false,
-	Tooltip = "Enables Blatant modules like fly, speed, infinitefly etc."		
+	Tooltip = "Enables Blatant modules like fly, speed, infinitefly etc."	
+})	
 guipane:CreateToggle({
 	Name = 'GUI bind indicator',
 	Default = true,
