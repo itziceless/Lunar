@@ -5933,6 +5933,10 @@ mainapi.Blur = guipane:CreateToggle({
 	Tooltip = 'Blur the background of the GUI'
 })
 guipane:CreateToggle({
+	Name = "Blatant Mode",
+	Default = false,
+	Tooltip = "Enables Blatant modules like fly, speed, infinitefly etc."		
+guipane:CreateToggle({
 	Name = 'GUI bind indicator',
 	Default = true,
 	Tooltip = "Displays a message indicating your GUI upon injecting.\nI.E. 'Press RSHIFT to open GUI'"
