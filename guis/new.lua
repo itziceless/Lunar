@@ -5932,7 +5932,7 @@ mainapi.Blur = guipane:CreateToggle({
 	Default = true,
 	Tooltip = 'Blur the background of the GUI'
 })
-guipane:CreateToggle({
+BlatantMode = guipane:CreateToggle({
 	Name = "Blatant Mode",
 	Default = false,
 	Tooltip = "Enables Blatant modules like fly, speed, infinitefly etc."	
