@@ -716,7 +716,6 @@ run(function()
 		end
 	})
 
-	print("good so far...")
 		
 	local remoteNames = {
 		AckKnockback = debug.getproto(debug.getproto(Knit.Controllers.KnockbackController.KnitStart, 1), 1),
@@ -750,7 +749,6 @@ run(function()
 		SummonerClawAttack = Knit.Controllers.SummonerClawController.attack
 	}
 
-	print("and theres our problem...")
 		
 	local function dumpRemote(tab)
 		local ind
