@@ -3043,8 +3043,7 @@ run(function()
 		Name = 'ProjectileAura',
 		Function = function(callback)
 			if callback then
-				repeat
-					if (mainapi.BlatantMode = true) then																																			
+				repeat																																			
 					if (workspace:GetServerTimeNow() - bedwars.SwordController.lastAttack) > 0.5 then
 						local ent = entitylib.EntityPosition({
 							Part = 'RootPart',
@@ -3091,8 +3090,7 @@ run(function()
 								end
 							end
 						end
-					end
-				end																																					
+					end																																					
 					task.wait(0.1)
 				until not ProjectileAura.Enabled
 			end
@@ -3115,9 +3113,7 @@ run(function()
 		Suffix = function(val)
 			return val == 1 and 'stud' or 'studs'
 		end
-	})
-		else
-	end																																		
+	})																																	
 end)
 	
 --[[run(function()
