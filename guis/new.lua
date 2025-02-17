@@ -19,6 +19,7 @@ local mainapi = {
 	Scale = {Value = 1},
 	ThreadFix = setthreadidentity and true or false,
 	ToggleNotifications = {},
+	BlatantMode = {},
 	Version = '4.18',
 	Windows = {}
 }
