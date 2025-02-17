@@ -3044,7 +3044,7 @@ run(function()
 		Function = function(callback)
 			if callback then
 				repeat
-					if mainapi.BlatantMode = true then																																			
+					if (mainapi.BlatantMode = true) then																																			
 					if (workspace:GetServerTimeNow() - bedwars.SwordController.lastAttack) > 0.5 then
 						local ent = entitylib.EntityPosition({
 							Part = 'RootPart',
