@@ -84,9 +84,7 @@ local users = {
 local ingame = game:GetService("Players").LocalPlayer.Name
 local whitelisted = false
 
-print("Loaded Users Table:")
-for _, v in pairs(users) do
-    print(v) 
+for _, v in pairs(users) do 
     if v == ingame then
         whitelisted = true
         break
@@ -94,10 +92,8 @@ for _, v in pairs(users) do
 end
 
 if whitelisted then
-	print("Whitelisted")
 	return loadstring(downloadFile('newvape/main.lua'), 'main')()
 	else
-	print("Not Whitelisted")
 	game:GetService("Players").LocalPlayer:Kick('Not Whitelisted, please Whitelist in our discord server, https://discord.gg/ryDhGJkEyP (also in youre clipboard)')
 	setclipboard("https://discord.gg/ryDhGJkEyP")
 end
