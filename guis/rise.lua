@@ -3050,7 +3050,7 @@ targetinfoshot.Parent = targetinfobkg
 addCorner(targetinfoshot, UDim.new(0, 14))
 local targetinfoname = Instance.new('TextLabel')
 targetinfoname.Size = UDim2.fromOffset(60, 30)
-targetinfoname.Position = UDim2.fromOffset(158, 21)
+targetinfoname.Position = UDim2.fromOffset(94, 21)
 targetinfoname.BackgroundTransparency = 1
 targetinfoname.Text = 'Rise'
 targetinfoname.TextSize = 26
