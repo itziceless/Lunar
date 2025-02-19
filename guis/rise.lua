@@ -1743,9 +1743,9 @@ function mainapi:CreateCategory(categorysettings)
 		local bind = Instance.new('TextButton')									
 		bind.Name = 'Bind'
 		bind.Size = UDim2.fromOffset(20, 21)
-		bind.Position = UDim2.new(1, -36, 0, 9)
+		bind.Position = UDim2.new(0, 0, 0, 0)
 		bind.AnchorPoint = Vector2.new(1, 0)
-		bind.BackgroundColor3 = Color3.new(1, 1, 1)
+		bind.BackgroundColor3 = Color3.new(255, 255, 255)
 		bind.BackgroundTransparency = 0.92
 		bind.BorderSizePixel = 0
 		bind.AutoButtonColor = false
