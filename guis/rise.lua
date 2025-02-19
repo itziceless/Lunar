@@ -1750,8 +1750,7 @@ function mainapi:CreateCategory(categorysettings)
 		bind.BorderSizePixel = 0
 		bind.AutoButtonColor = false
 		bind.Visible = true
-		bind.Text = 'NONE'
-		bind.TextColor3 = Color3.fromRGB(200, 200, 200)							
+		bind.Text = 'NONE'						
 		bind.Parent = modulebutton							
 		addCorner(bind, UDim.new(0, 4))						
 		local desc = Instance.new('TextLabel')
