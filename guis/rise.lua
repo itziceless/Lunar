@@ -1746,10 +1746,10 @@ function mainapi:CreateCategory(categorysettings)
 		bind.Position = UDim2.new(0, 0, 0, 0)
 		bind.AnchorPoint = Vector2.new(1, 0)
 		bind.BackgroundColor3 = Color3.new(255, 255, 255)
-		bind.BackgroundTransparency = 0.92
+		bind.BackgroundTransparency = 0
 		bind.BorderSizePixel = 0
 		bind.AutoButtonColor = false
-		bind.Visible = false
+		bind.Visible = true
 		bind.Text = 'test123'
 		bind.Parent = modulebutton							
 		local desc = Instance.new('TextLabel')
