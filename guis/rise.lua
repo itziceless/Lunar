@@ -1749,7 +1749,7 @@ function mainapi:CreateCategory(categorysettings)
 		bind.BackgroundTransparency = 0.92
 		bind.BorderSizePixel = 0
 		bind.AutoButtonColor = false
-		bind.Visible = false
+		bind.Visible = true
 		bind.Text = ''
 		bind.Parent = modulebutton							
 		addCorner(bind, UDim.new(0, 4))
