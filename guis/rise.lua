@@ -3020,7 +3020,7 @@ targetinfoobj = mainapi:CreateOverlay({
 			end)
 		end
 	end,
-	NoDrag = true
+	NoDrag = false
 })
 
 local targetinfobkg = Instance.new('Frame')
@@ -3029,7 +3029,7 @@ targetinfobkg.Position = UDim2.new(0.5, 0, 0.5, 95)
 targetinfobkg.AnchorPoint = Vector2.new(0.5, 0.5)
 targetinfobkg.BackgroundTransparency = 0.5
 targetinfobkg.Parent = targetinfoobj.Children
-targetinfobkg.Color3.fromRGB(23, 26, 33)
+targetinfobkg.Color = Color3.fromRGB(25, 25, 25)
 local targetinfoscale = Instance.new('UIScale')
 targetinfoscale.Scale = 0
 targetinfoscale.Parent = targetinfobkg
