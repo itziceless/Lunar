@@ -1740,7 +1740,8 @@ function mainapi:CreateCategory(categorysettings)
 		mtitle.FontFace = uipallet.Font
 		mtitle.Parent = modulebutton
 		modulesettings.Tooltip = modulesettings.Tooltip or 'None'
-		local bind = Instance.new('TextButton')							
+		local bind = Instance.new('TextButton')		
+		addTooltip(bind, 'Click to bind')							
 		bind.Name = 'Bind'
 		bind.Size = UDim2.fromOffset(20, 21)
 		bind.Position = UDim2.new(1, -36, 0, 9)
