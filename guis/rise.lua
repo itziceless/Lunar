@@ -1751,7 +1751,7 @@ function mainapi:CreateCategory(categorysettings)
 		bind.AutoButtonColor = false
 		bind.Visible = true
 		bind.Text = 'NONE'
-		bind.TextColor3 = color.Dark(uipallet.Text, 0.5)							
+		bind.TextColor3 = Color3.fromRGB(200, 200, 200)							
 		bind.Parent = modulebutton							
 		addCorner(bind, UDim.new(0, 4))						
 		local desc = Instance.new('TextLabel')
