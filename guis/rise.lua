@@ -1750,7 +1750,8 @@ function mainapi:CreateCategory(categorysettings)
 		bind.BorderSizePixel = 0
 		bind.AutoButtonColor = false
 		bind.Visible = false
-		bind.Text = 'test123'							
+		bind.Text = 'test123'
+		bind.Parent = button							
 		local desc = Instance.new('TextLabel')
 		desc.Size = UDim2.fromOffset(200, 24)
 		desc.Position = UDim2.fromOffset(13, 45 - (modulesettings.Tooltip:find('\n') and 10 or 0))
