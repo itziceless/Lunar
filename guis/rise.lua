@@ -1742,10 +1742,10 @@ function mainapi:CreateCategory(categorysettings)
 		modulesettings.Tooltip = modulesettings.Tooltip or 'None'
 		local bind = Instance.new('TextButton')
 		bind.Name = 'Bind'
-		bind.Size = UDim2.fromOffset(35, 15)
+		bind.Size = UDim2.fromOffset(35, 12)
 		bind.Position = UDim2.new(0, 100, 0, 20)
 		bind.AnchorPoint = Vector2.new(1, 0)
-		bind.BackgroundColor3 = Color3.new(1, 1, 1)
+		bind.BackgroundColor3 = color.Dark(uipallet.Main, 0.5)
 		bind.BackgroundTransparency = 0.5
 		bind.BorderSizePixel = 0
 		bind.AutoButtonColor = false
