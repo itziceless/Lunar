@@ -3027,7 +3027,7 @@ local targetinfobkg = Instance.new('Frame')
 targetinfobkg.Size = UDim2.fromOffset(295, 95)
 targetinfobkg.Position = UDim2.new(0.5, 0, 0.5, 95)
 targetinfobkg.AnchorPoint = Vector2.new(0.5, 0.5)
-targetinfobkg.BackgroundTransparency = 0
+targetinfobkg.BackgroundTransparency = 0.5
 targetinfobkg.Parent = targetinfoobj.Children
 local targetinfoscale = Instance.new('UIScale')
 targetinfoscale.Scale = 0
@@ -3039,7 +3039,7 @@ targetinfogradient.Color = ColorSequence.new({
 })
 targetinfogradient.Rotation = 90
 targetinfogradient.Parent = targetinfobkg
-addCorner(targetinfobkg, UDim.new(0, 15))
+addCorner(targetinfobkg, UDim.new(0, 10))
 local targetinfoshot = Instance.new('ImageLabel')
 targetinfoshot.Size = UDim2.fromOffset(64, 64)
 targetinfoshot.Position = UDim2.new(0, 48, 0.5, 1)
