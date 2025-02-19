@@ -1746,7 +1746,7 @@ function mainapi:CreateCategory(categorysettings)
 		bind.Position = UDim2.new(1, -36, 0, 9)
 		bind.AnchorPoint = Vector2.new(1, 0)
 		bind.BackgroundColor3 = Color3.new(1, 1, 1)
-		bind.BackgroundTransparency = 0.92
+		bind.BackgroundTransparency = 0
 		bind.BorderSizePixel = 0
 		bind.AutoButtonColor = false
 		bind.Visible = true
