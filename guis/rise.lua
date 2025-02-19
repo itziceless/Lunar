@@ -3039,7 +3039,7 @@ targetinfogradient.Color = ColorSequence.new({
 })
 targetinfogradient.Rotation = 90
 targetinfogradient.Parent = targetinfobkg
-addCorner(targetinfobkg, UDim.new(0, 10))
+addCorner(targetinfobkg, UDim.new(0, 15))
 local targetinfoshot = Instance.new('ImageLabel')
 targetinfoshot.Size = UDim2.fromOffset(64, 64)
 targetinfoshot.Position = UDim2.new(0, 48, 0.5, 1)
