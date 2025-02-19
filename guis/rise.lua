@@ -1742,7 +1742,7 @@ function mainapi:CreateCategory(categorysettings)
 		modulesettings.Tooltip = modulesettings.Tooltip or 'None'
 		local bind = Instance.new('TextButton')
 		bind.Name = 'Bind'
-		bind.Size = UDim2.fromOffset(20, 50)
+		bind.Size = UDim2.fromOffset(35, 15)
 		bind.Position = UDim2.new(0, 100, 0, 10)
 		bind.AnchorPoint = Vector2.new(1, 0)
 		bind.BackgroundColor3 = Color3.new(1, 1, 1)
