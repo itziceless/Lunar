@@ -3032,13 +3032,13 @@ targetinfobkg.Parent = targetinfoobj.Children
 local targetinfoscale = Instance.new('UIScale')
 targetinfoscale.Scale = 0
 targetinfoscale.Parent = targetinfobkg
-local targetinfogradient = Instance.new('UIGradient')
+--[[local targetinfogradient = Instance.new('UIGradient')
 targetinfogradient.Color = ColorSequence.new({
 	ColorSequenceKeypoint.new(0, color.Dark(uipallet.MainColor, 0.5)),
 	ColorSequenceKeypoint.new(1, color.Dark(uipallet.SecondaryColor, 0.5))
 })
 targetinfogradient.Rotation = 90
-targetinfogradient.Parent = targetinfobkg
+targetinfogradient.Parent = targetinfobkg--]]
 addCorner(targetinfobkg, UDim.new(0, 15))
 local targetinfoshot = Instance.new('ImageLabel')
 targetinfoshot.Size = UDim2.fromOffset(64, 64)
@@ -3309,10 +3309,10 @@ function mainapi:UpdateGUI(hue, sat, val, default)
 	end
 
 	if targetinfoobj.Button.Enabled then
-		targetinfogradient.Color = ColorSequence.new({
+		--[[targetinfogradient.Color = ColorSequence.new({
 			ColorSequenceKeypoint.new(0, color.Dark(self:RiseColor(targetinfobkg.AbsolutePosition / 2), 0.5)),
 			ColorSequenceKeypoint.new(1, color.Dark(self:RiseColor((targetinfobkg.AbsolutePosition + Vector2.new(0, 100)) / 2), 0.5))
-		})
+		})--]]
 		targetinfohealthgradient.Color = ColorSequence.new({
 			ColorSequenceKeypoint.new(0, uipallet.MainColor),
 			ColorSequenceKeypoint.new(1, uipallet.SecondaryColor)
