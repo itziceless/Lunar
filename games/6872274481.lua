@@ -8309,10 +8309,10 @@ run(function()
 		Tooltip = 'Movement Only - Only chokes movement packets\nAll - Chokes remotes & movement'
 	})
 	AutoSendLength = Desync:CreateSlider({
-		Name = 'Send delay',
+		Name = 'Sender delay',
 		Min = 0,
 		Max = 1,
-		Decimal = 100,
+		Decimal = 1000,
 		Suffix = function(val)
 			return val == 1 and 'second' or 'seconds'
 		end
