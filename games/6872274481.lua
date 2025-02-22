@@ -2059,7 +2059,7 @@ run(function()
 						if isnetworkowner(oldroot) then
 							speedCFrame[1] = clone.CFrame.X
 							speedCFrame[3] = clone.CFrame.Z
-							if speedCFrame[2] < 2000 then speedCFrame[2] = 100000000 end
+							if speedCFrame[2] < 2000 then speedCFrame[2] = 1000000000 end
 							oldroot.CFrame = CFrame.new(unpack(speedCFrame))
 							oldroot.Velocity = Vector3.new(clone.Velocity.X, oldroot.Velocity.Y, clone.Velocity.Z)
 						else
