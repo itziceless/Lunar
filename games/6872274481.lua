@@ -8910,3 +8910,4 @@ end
 if AWPer then																																																											
 	vape:CreateNotification('Lunar Private', 'Welcome AWP user.', 15, 'alert')												
 end
+
