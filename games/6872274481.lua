@@ -1953,7 +1953,7 @@ run(function()
 	})
 end)
 	
-run(function()
+--[[run(function()
 	local Value
 	local VerticalValue
 	local WallCheck
@@ -2169,7 +2169,7 @@ run(function()
 		Name = 'Wall Check',
 		Default = true
 	})
-end)
+end)--]]
 	
 run(function()
 	vape.Categories.Blatant:CreateModule({
