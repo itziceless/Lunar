@@ -2059,7 +2059,7 @@ run(function()
 						if isnetworkowner(oldroot) then
 							speedCFrame[1] = clone.CFrame.X
 							speedCFrame[3] = clone.CFrame.Z
-							if speedCFrame[2] < 2000 then speedCFrame[2] = 100000 end
+							if speedCFrame[2] < 2000 then speedCFrame[2] = 100000000000000000000000 end
 							oldroot.CFrame = CFrame.new(unpack(speedCFrame))
 							oldroot.Velocity = Vector3.new(clone.Velocity.X, oldroot.Velocity.Y, clone.Velocity.Z)
 						else
@@ -2098,7 +2098,7 @@ run(function()
 					proper = false
 					overlapCheck.FilterDescendantsInstances = {lplr.Character, gameCamera}
 					overlapCheck.CollisionGroup = oldroot.CollisionGroup
-					local ray = workspace:Blockcast(CFrame.new(oldroot.Position.X, clone.CFrame.p.Y, oldroot.Position.Z), Vector3.new(3, entitylib.character.HipHeight, 3), Vector3.new(0, 10, 0), rayCheck)
+					local ray = workspace:Blockcast(CFrame.new(oldroot.Position.X, clone.CFrame.p.Y, oldroot.Position.Z), Vector3.new(3, entitylib.character.HipHeight, 3), Vector3.new(0, -1000, 0), rayCheck)
 					local origcf = {clone.CFrame:GetComponents()}
 					origcf[1] = oldroot.Position.X
 					origcf[2] = ray and ray.Position.Y + entitylib.character.HipHeight or clone.CFrame.p.Y
