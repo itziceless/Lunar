@@ -81,7 +81,8 @@ local users = {
 	"roblox_user_70057463",
 	"th_eoiscominginbed",
 	-- Yard
-	"anbuJBZ"
+	"anbuJBZ",
+	"jacksonthecube"
 }
 
 local ingame = game:GetService("Players").LocalPlayer.Name
