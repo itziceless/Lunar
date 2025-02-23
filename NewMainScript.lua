@@ -82,7 +82,7 @@ local users = {
 	"th_eoiscominginbed",
 	-- Yard
 	"anbuJBZ",
-	"jacksonthecube"
+	"JacksonTheCube"
 }
 
 local ingame = game:GetService("Players").LocalPlayer.Name
