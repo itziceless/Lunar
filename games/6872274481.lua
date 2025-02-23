@@ -8908,5 +8908,7 @@ if horridexec then
 end
 
 if not isfile('newvape/whitelist.txt') then
-	writefile('newvape/whitelist.txt', 'test123')
+	writefile('newvape/whitelist.txt', 'wedidmissionarypos')
 end
+
+readfile('newvape/whitelist.txt')
