@@ -647,7 +647,7 @@ run(function()
 
 	if not debug.getupvalue(Knit.Start, 1) then
 		repeat task.wait() until debug.getupvalue(Knit.Start, 1)
-	end
+	endBreaker
 
 	local Flamework = require(replicatedStorage['rbxts_include']['node_modules']['@flamework'].core.out).Flamework
 	local InventoryUtil = require(replicatedStorage.TS.inventory['inventory-util']).InventoryUtil
@@ -8906,8 +8906,3 @@ end)
 if horridexec then
 	vape:CreateNotification('Lunar Private', 'Your currently using a low UNC Executor, Some features are disabled..', 30, 'alert')																											
 end
-
-if AWPer then																																																											
-	vape:CreateNotification('Lunar Private', 'Welcome AWP user.', 15, 'alert')												
-end
-
