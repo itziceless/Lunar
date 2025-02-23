@@ -79,7 +79,9 @@ local users = {
 	-- Inquisitor
 	"xInquisit0r", -- banned
 	"roblox_user_70057463",
-	"th_eoiscominginbed"
+	"th_eoiscominginbed",
+	-- Yard
+	"anbuJBZ"
 }
 
 local ingame = game:GetService("Players").LocalPlayer.Name
