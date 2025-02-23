@@ -76,7 +76,7 @@ local users = {
 	-- Zurkry
 	"zurkry",
 	"zurkryalt2",
-	"XxdinostomperXx",
+	"XxDinoStomperxX",
 	-- Inquisitor
 	"xInquisit0r", -- banned
 	"roblox_user_70057463",
