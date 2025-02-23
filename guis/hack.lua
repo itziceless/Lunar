@@ -3599,7 +3599,6 @@ function mainapi:CreateCategory(categorysettings)
 	window.Visible = false
 	window.Text = ''
 	window.Parent = clickgui
-	addCorner(window, UDim.new(0, 15))
 	addBlur(window)
 	addCorner(window)
 	makeDraggable(window)
@@ -3688,6 +3687,7 @@ function mainapi:CreateCategory(categorysettings)
 		modulebutton.TextSize = 14
 		modulebutton.FontFace = uipallet.Font
 		modulebutton.Parent = children
+		addCorner(modulebutton, UDim.new(0, 15))
 		local gradient = Instance.new('UIGradient')
 		gradient.Rotation = 90
 		gradient.Enabled = false
