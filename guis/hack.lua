@@ -3599,6 +3599,7 @@ function mainapi:CreateCategory(categorysettings)
 	window.Visible = false
 	window.Text = ''
 	window.Parent = clickgui
+	addCorner(window, UDim.new(0, 15))
 	addBlur(window)
 	addCorner(window)
 	makeDraggable(window)
