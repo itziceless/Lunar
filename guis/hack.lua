@@ -3677,7 +3677,7 @@ function mainapi:CreateCategory(categorysettings)
 		local hovered = false
 		local modulebutton = Instance.new('TextButton')
 		modulebutton.Name = modulesettings.Name
-		modulebutton.Size = UDim2.fromOffset(220, 40)
+		modulebutton.Size = UDim2.fromOffset(200, 30)
 		modulebutton.BackgroundColor3 = uipallet.Main
 		modulebutton.BorderSizePixel = 0
 		modulebutton.AutoButtonColor = false
