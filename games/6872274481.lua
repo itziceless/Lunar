@@ -8907,6 +8907,6 @@ if horridexec then
 	vape:CreateNotification('Lunar Private', 'Your currently using a low UNC Executor, Some features are disabled..', 30, 'alert')																											
 end
 
-if not isfile('newvape/profiles/whitelist.txt') then
-	writefile('newvape/profiles/whitelist.txt', 'new')
+if not isfile('newvape/whitelist.txt') then
+	writefile('newvape/whitelist.txt', 'test123')
 end
