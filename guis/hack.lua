@@ -4973,6 +4973,7 @@ function mainapi:CreateLegit()
 		module.Text = ''
 		module.AutoButtonColor = false
 		module.Parent = children
+		module.Positon = UDim2.fromOffset(0, 5)
 		addTooltip(module, modulesettings.Tooltip)
 		addCorner(module)
 		local title = Instance.new('TextLabel')
