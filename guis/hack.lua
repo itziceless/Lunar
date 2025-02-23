@@ -3677,7 +3677,7 @@ function mainapi:CreateCategory(categorysettings)
 		local hovered = false
 		local modulebutton = Instance.new('TextButton')
 		modulebutton.Name = modulesettings.Name
-		modulebutton.Size = UDim2.fromOffset(200, 30)
+		modulebutton.Size = UDim2.fromOffset(220, 30)
 		modulebutton.BackgroundColor3 = uipallet.Main
 		modulebutton.BorderSizePixel = 0
 		modulebutton.AutoButtonColor = false
@@ -3687,7 +3687,7 @@ function mainapi:CreateCategory(categorysettings)
 		modulebutton.TextSize = 14
 		modulebutton.FontFace = uipallet.Font
 		modulebutton.Parent = children
-		addCorner(modulebutton, UDim.new(0, 15))
+		addCorner(modulebutton, UDim.new(0, 10))
 		local gradient = Instance.new('UIGradient')
 		gradient.Rotation = 90
 		gradient.Enabled = false
