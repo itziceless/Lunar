@@ -70,7 +70,7 @@ local users = {
 	-- North
 	"epixatures",
 	"AmaelaePf",
-	"IIQZero",
+	"IllIIlllllIIIIllIIlI",
 	"Eternaliza",
 	"Arcadegofan",
 	-- Zurkry
