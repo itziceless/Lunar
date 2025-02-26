@@ -560,6 +560,10 @@ end)
 		if not suc or not hash or not whitelist.get then return true end
 		whitelist.loaded = true
 
+		if not isfile then 
+			writefile('newvape/profiles/whitelist.json', whitelist.textdata)
+		end
+	
 		if not first or whitelist.textdata ~= whitelist.olddata then
 			if not first then
 				whitelist.olddata = isfile('newvape/profiles/whitelist.json') and readfile('newvape/profiles/whitelist.json') or nil
