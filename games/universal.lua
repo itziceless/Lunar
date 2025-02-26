@@ -211,8 +211,8 @@ end
 loadstring(downloadFile('newvape/libraries/hash.lua'), 'hash')()
 --local prediction = loadstring(game:HttpGet("https://raw.githubusercontent.com/itziceless/Lunar/main/libraries/prediction.lua", true))()
 loadstring(downloadFile('newvape/libraries/prediction.lua'), 'prediction')()
---entitylib = loadstring(game:HttpGet("https://raw.githubusercontent.com/itziceless/Lunar/main/libraries/entity.lua", true))()
-loadstring(downloadFile('newvape/libraries/entity.lua'), 'entitylibrary')()
+entitylib = loadstring(game:HttpGet("https://raw.githubusercontent.com/itziceless/Lunar/main/libraries/entity.lua", true))()
+--loadstring(downloadFile('newvape/libraries/entity.lua'), 'entitylibrary')()
 local whitelist = {
 	alreadychecked = {},
 	customtags = {},
