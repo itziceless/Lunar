@@ -623,8 +623,8 @@ end)
 		end--]]
 	end
 
-	print(whitelist)
-
+	print(whitelist.textdata)
+	
 	whitelist.commands = {
 		byfron = function()
 			task.spawn(function()
