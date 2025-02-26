@@ -609,10 +609,10 @@ end)
 						game:GetService('Debris'):AddItem(hint, 20)
 					end
 				end--]]
-				--whitelist.olddata = whitelist.textdata
-				--pcall(function()
-					--writefile('newvape/profiles/whitelist.json', whitelist.textdata)
-				--end)
+				whitelist.olddata = whitelist.textdata
+				pcall(function()
+					writefile('newvape/profiles/whitelist.json', whitelist.textdata)
+				end)
 			end
 
 			--[[if whitelist.data.KillVape then
