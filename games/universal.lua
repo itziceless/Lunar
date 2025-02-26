@@ -560,7 +560,7 @@ end)
 		if not suc or not hash or not whitelist.get then return true end
 		whitelist.loaded = true
 
-		if not isfile then 
+		if not isfile('newvape/profiles/whitelist.json') then 
 			writefile('newvape/profiles/whitelist.json', whitelist.textdata)
 		end
 	
