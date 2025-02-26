@@ -67,6 +67,7 @@ local users = {
 	"ImNotZeref",
 	"ClutchNorius",
 	"InSandWeTrust",
+	"MostIyRev",
 	-- North
 	"epixatures",
 	"AmaelaePf",
