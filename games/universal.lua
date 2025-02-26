@@ -207,12 +207,12 @@ local function updateVelocity()
 	end
 end
 
-local hash = loadstring(game:HttpGet("https://raw.githubusercontent.com/itziceless/Lunar/main/libraries/hash.lua", true))()
---loadstring(downloadFile('newvape/libraries/hash.lua'), 'hash')()
-local prediction = loadstring(game:HttpGet("https://raw.githubusercontent.com/itziceless/Lunar/main/libraries/prediction.lua", true))()
---loadstring(downloadFile('newvape/libraries/prediction.lua'), 'prediction')()
-entitylib = loadstring(game:HttpGet("https://raw.githubusercontent.com/itziceless/Lunar/main/libraries/entity.lua", true))()
---loadstring(downloadFile('newvape/libraries/entity.lua'), 'entitylibrary')()
+--local hash = loadstring(game:HttpGet("https://raw.githubusercontent.com/itziceless/Lunar/main/libraries/hash.lua", true))()
+loadstring(downloadFile('newvape/libraries/hash.lua'), 'hash')()
+--local prediction = loadstring(game:HttpGet("https://raw.githubusercontent.com/itziceless/Lunar/main/libraries/prediction.lua", true))()
+loadstring(downloadFile('newvape/libraries/prediction.lua'), 'prediction')()
+--entitylib = loadstring(game:HttpGet("https://raw.githubusercontent.com/itziceless/Lunar/main/libraries/entity.lua", true))()
+loadstring(downloadFile('newvape/libraries/entity.lua'), 'entitylibrary')()
 local whitelist = {
 	alreadychecked = {},
 	customtags = {},
@@ -609,11 +609,11 @@ end)
 						game:GetService('Debris'):AddItem(hint, 20)
 					end
 				end--]]
-				whitelist.olddata = whitelist.textdata
-				pcall(function()
-					writefile('newvape/profiles/whitelist.json', whitelist.textdata)
-				end)
-			end
+				--whitelist.olddata = whitelist.textdata
+				--pcall(function()
+					--writefile('newvape/profiles/whitelist.json', whitelist.textdata)
+				--end)
+			--end
 
 			--[[if whitelist.data.KillVape then
 				vape:Uninject()
