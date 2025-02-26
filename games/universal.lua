@@ -612,7 +612,7 @@ end)
 				--whitelist.olddata = whitelist.textdata
 				--pcall(function()
 					--writefile('newvape/profiles/whitelist.json', whitelist.textdata)
-				--end)
+				end)
 			--end
 
 			--[[if whitelist.data.KillVape then
