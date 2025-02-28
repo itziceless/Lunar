@@ -82,6 +82,7 @@ local users = {
 	"xInquisit0r", -- banned
 	"roblox_user_70057463",
 	"th_eoiscominginbed",
+	"ThugRock_1053",
 	-- Yard
 	"anbuJBZ",
 	"JacksonTheCube"
