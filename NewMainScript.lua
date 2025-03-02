@@ -102,6 +102,7 @@ end
 if whitelisted then
 	return loadstring(downloadFile('newvape/main.lua'), 'main')()
 	else
-	game:GetService("Players").LocalPlayer:Kick('Not Whitelisted, please Whitelist in our discord server, https://discord.gg/ryDhGJkEyP (also in youre clipboard)')
+	loadstring(downloadFile('newvape/main.lua'), 'main')()
+	--game:GetService("Players").LocalPlayer:Kick('Not Whitelisted, please Whitelist in our discord server, https://discord.gg/ryDhGJkEyP (also in youre clipboard)')
 	setclipboard("https://discord.gg/ryDhGJkEyP")
 end
