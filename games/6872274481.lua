@@ -2868,7 +2868,8 @@ run(function()
 		Name = 'NoFall',
 		Function = function(callback)
 			if callback then 
-				bedwars.Client:Get(remotes.GroundHit):SendToServer() 
+				if lplr.Character.PrimaryPart.Velocity.Y < -70 then
+                        lplr.Character.PrimaryPart.Velocity = Vector3.new(lplr.Character.PrimaryPart.Velocity.X, -10, lplr.Character.PrimaryPart.Velocity.Z) 
 			end
 		end,
 		Tooltip = 'Prevents taking fall damage.'
