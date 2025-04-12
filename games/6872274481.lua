@@ -2862,15 +2862,6 @@ run(function()
 		end
 	})
 end)																																			
-																														
-run(function()
-	vape.Categories.Blatant:CreateModule({
-		Name = 'NoFall',
-		Function = function(callback)
-			if callback then 
-		end
-	})
-end)
 	
 run(function()
 	local old
