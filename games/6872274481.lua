@@ -719,7 +719,7 @@ run(function()
 		
 	local remoteNames = {
 		AckKnockback = debug.getproto(debug.getproto(Knit.Controllers.KnockbackController.KnitStart, 1), 1),
-		AfkStatus = debug.getproto(Knit.Controllers.AfkController.KnitStart, 1),
+		--AfkStatus = debug.getproto(Knit.Controllers.AfkController.KnitStart, 1),
 		AttackEntity = Knit.Controllers.SwordController.sendServerRequest,
 		--ConsumeBattery = debug.getproto(debug.getproto(Knit.Controllers.BatteryController.KnitStart, 1), 1),
 		CannonAim = debug.getproto(Knit.Controllers.CannonController.startAiming, 5),
