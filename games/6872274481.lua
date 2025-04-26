@@ -7955,7 +7955,7 @@ run(function()
 	})
 end)
 	
-run(function()
+--[[run(function()
 	local UICleanup
 	local OpenInv
 	local KillFeed
@@ -8038,7 +8038,7 @@ run(function()
 			end
 		end,
 		Tooltip = 'Cleans up the UI for kits & main'
-	})
+	})--]]
 	UICleanup:CreateToggle({
 		Name = 'Resize Health',
 		Function = function(callback)
