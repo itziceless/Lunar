@@ -8038,7 +8038,7 @@ end)
 			end
 		end,
 		Tooltip = 'Cleans up the UI for kits & main'
-	})--]]
+	})
 	UICleanup:CreateToggle({
 		Name = 'Resize Health',
 		Function = function(callback)
@@ -8106,7 +8106,7 @@ end)
 		end,
 		Default = true
 	})
-end)
+end)--]]
 	
 run(function()
 	local Viewmodel
